@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://pacbac.github.io/pacbac.github.io",
+  "homepage": "http://pacbac.github.io",
   "dependencies": {
     "merge": "^1.2.1",
     "node-sass-chokidar": "^1.3.3",
