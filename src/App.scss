@@ -1,0 +1,136 @@
+$sections: 'home', 'projects', 'contact';
+
+.App {
+    text-align: center;
+    display: flex;
+}
+  
+.App-logo {
+  height: 20vmin;
+  margin-bottom: 15px;
+  border: {
+    radius: 20%;
+    style: solid;
+    color: rgb(228, 227, 227);
+    width: 3px;
+  }
+}
+
+.App-header-sub {
+  background: transparent;
+  min-height: 100vh;
+  flex-grow: 1;
+  max-width: 25%;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding: 15px 0;
+  > h1 {
+    margin: 30px;
+    color: transparent;
+  }
+}
+
+.App-header {
+  @extend .App-header-sub;
+  position: fixed;
+  background-color: #1a3057;
+  // border: {
+  //   top-right-radius: 60%;
+  //   bottom-right-radius: 60%;
+  // }
+  z-index: 1;
+  > h1 {
+    color: white;
+  }
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.btn {
+  color: white;
+  text-decoration: none;
+  display: block;
+  font-family: sans-serif;
+  margin-bottom: 10px;
+  padding: 7px;
+
+  &:hover {
+    background-color: #5688c2;
+  }
+}
+
+.contact {
+  background-color: gray;
+}
+
+div.content {
+  position: relative;
+  width: 100%;
+
+  h1 {
+    margin-top: 0;
+  }
+}
+
+@mixin section($color, $min-height: 50vh){
+  background-color: $color;
+  padding: 25px;
+  min-height: $min-height;
+}
+
+@each $section in $sections {
+  ##{$section}-content {
+    @if $section == 'home' {
+      @include section(rgb(204, 204, 204));
+    } @else if $section == 'projects' {
+      @include section(rgb(145, 145, 145));
+    } @else if $section == 'contact' {
+      @include section(rgb(95, 95, 95), 15vh);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      > h1 {
+        margin-top: 0;
+      }
+
+      > * {
+        position: relative;
+        bottom: 20px;
+      }
+    }
+  }
+}
+
+#contact-content > h1 {
+  color: white;
+}
+
+.contact-links > a {
+  text-decoration: none;
+
+  > i {
+    margin: 20px;
+    color: white;
+  }
+}
+
+.projects-row {
+  display: flex;
+}
+
+.project-entry {
+  flex-basis: 30%;
+  flex-grow: 1;
+  min-width: 30%;
+  min-height: 30%;
+  margin: 40px;
+  border: {
+    style: solid;
+    width: 1px;
+    color: white;
+    radius: 3px;
+  }
+}

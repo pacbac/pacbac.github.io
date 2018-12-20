@@ -1,0 +1,98 @@
+.App {
+  text-align: center;
+  display: flex; }
+
+.App-logo {
+  height: 20vmin;
+  margin-bottom: 15px;
+  border-radius: 20%;
+  border-style: solid;
+  border-color: #e4e3e3;
+  border-width: 3px; }
+
+.App-header-sub, .App-header {
+  background: transparent;
+  min-height: 100vh;
+  flex-grow: 1;
+  max-width: 25%;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding: 15px 0; }
+  .App-header-sub > h1, .App-header > h1 {
+    margin: 30px;
+    color: transparent; }
+
+.App-header {
+  position: fixed;
+  background-color: #1a3057;
+  z-index: 1; }
+  .App-header > h1 {
+    color: white; }
+
+.App-link {
+  color: #61dafb; }
+
+.btn {
+  color: white;
+  text-decoration: none;
+  display: block;
+  font-family: sans-serif;
+  margin-bottom: 10px;
+  padding: 7px; }
+  .btn:hover {
+    background-color: #5688c2; }
+
+.contact {
+  background-color: gray; }
+
+div.content {
+  position: relative;
+  width: 100%; }
+  div.content h1 {
+    margin-top: 0; }
+
+#home-content {
+  background-color: #cccccc;
+  padding: 25px;
+  min-height: 50vh; }
+
+#projects-content {
+  background-color: #919191;
+  padding: 25px;
+  min-height: 50vh; }
+
+#contact-content {
+  background-color: #5f5f5f;
+  padding: 25px;
+  min-height: 15vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  #contact-content > h1 {
+    margin-top: 0; }
+  #contact-content > * {
+    position: relative;
+    bottom: 20px; }
+
+#contact-content > h1 {
+  color: white; }
+
+.contact-links > a {
+  text-decoration: none; }
+  .contact-links > a > i {
+    margin: 20px;
+    color: white; }
+
+.projects-row {
+  display: flex; }
+
+.project-entry {
+  flex-basis: 30%;
+  flex-grow: 1;
+  min-width: 30%;
+  min-height: 30%;
+  margin: 40px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: white;
+  border-radius: 3px; }
