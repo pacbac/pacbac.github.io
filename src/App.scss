@@ -1,4 +1,12 @@
 $sections: 'home', 'projects', 'contact';
+$dark-text: rgb(92, 92, 92);
+$dark-text-blue: #1a3057;
+
+@mixin section($color, $min-height: 50vh, $padding: 25px){
+  background-color: $color;
+  padding: $padding;
+  min-height: $min-height;
+}
 
 .App {
     text-align: center;
@@ -16,6 +24,7 @@ $sections: 'home', 'projects', 'contact';
   }
 }
 
+// substitute filler block to occupy App-header space (since App-header is position fixed)
 .App-header-sub {
   background: transparent;
   min-height: 100vh;
@@ -34,10 +43,6 @@ $sections: 'home', 'projects', 'contact';
   @extend .App-header-sub;
   position: fixed;
   background-color: #1a3057;
-  // border: {
-  //   top-right-radius: 60%;
-  //   bottom-right-radius: 60%;
-  // }
   z-index: 1;
   > h1 {
     color: white;
@@ -74,20 +79,25 @@ div.content {
   }
 }
 
-@mixin section($color, $min-height: 50vh){
-  background-color: $color;
-  padding: 25px;
-  min-height: $min-height;
-}
-
 @each $section in $sections {
   ##{$section}-content {
+    color: white;
+    position: relative;
+
+    > div {
+      background-color: white;
+      padding: 20px;
+      height: 100%;
+    }
     @if $section == 'home' {
-      @include section(rgb(204, 204, 204));
+      @include section(rgb(221, 221, 221), 50vh, 40px);
+      color: $dark-text;
     } @else if $section == 'projects' {
-      @include section(rgb(145, 145, 145));
+      @include section(rgba(23, 39, 126, 0.664));
+      box-sizing: border-box;
     } @else if $section == 'contact' {
-      @include section(rgb(95, 95, 95), 15vh);
+      @include section(rgb(221, 221, 221), 15vh);
+      color: $dark-text-blue;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -104,8 +114,21 @@ div.content {
   }
 }
 
-#contact-content > h1 {
-  color: white;
+.home-bio {
+  max-width: 70%;
+  margin: auto;
+
+  > h2 {
+    display: inline;
+  }
+}
+
+.home-workplaces {
+  display: flex;
+
+  .workplace {
+    flex-grow: 1;
+  }
 }
 
 .contact-links > a {
@@ -113,24 +136,40 @@ div.content {
 
   > i {
     margin: 20px;
-    color: white;
+    color: $dark-text-blue;
+
+    &:hover {
+      color: white;
+    }
   }
 }
 
 .projects-row {
   display: flex;
+
+  > a {
+    display: block;
+    margin: 40px;
+    flex-basis: 30%;
+    flex-grow: 1;
+    text-decoration: none;
+  }
 }
 
 .project-entry {
-  flex-basis: 30%;
-  flex-grow: 1;
   min-width: 30%;
   min-height: 30%;
-  margin: 40px;
+  background-color: white;
+  color: black;
+  padding: 20px;
   border: {
     style: solid;
     width: 1px;
-    color: white;
+    color: black;
     radius: 3px;
+  }
+  font: {
+    size: 14px;
+    family: sans-serif;
   }
 }
