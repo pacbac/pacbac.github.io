@@ -4,7 +4,7 @@ import Projects from './Projects';
 import Contact from './Contact';
 
 export default () => (
-    <div class="content">
+    <div className="content">
         <Home/>
         <Projects/>
         <Contact/>

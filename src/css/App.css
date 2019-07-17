@@ -110,9 +110,10 @@ div.content {
   text-decoration: none; }
   .contact-links > a > i {
     margin: 20px;
-    color: #1a3057; }
+    color: #1a3057;
+    font-size: 40px; }
     .contact-links > a > i:hover {
-      color: white; }
+      color: gray; }
 
 .projects-row {
   display: flex; }

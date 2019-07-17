@@ -137,9 +137,10 @@ div.content {
   > i {
     margin: 20px;
     color: $dark-text-blue;
+    font-size: 40px;
 
     &:hover {
-      color: white;
+      color: gray;
     }
   }
 }
