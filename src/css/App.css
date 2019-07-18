@@ -105,6 +105,12 @@ div.content {
   display: flex; }
   .home-workplaces .workplace {
     flex-grow: 1; }
+    .home-workplaces .workplace > h4 {
+      margin-block-start: 0.2em;
+      margin-block-end: 0.2em; }
+    .home-workplaces .workplace > p {
+      margin-block-start: 0.2em;
+      margin-block-end: 0.5em; }
 
 .contact-links > a {
   text-decoration: none; }
