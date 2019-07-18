@@ -27,7 +27,7 @@ const NAME_LOGO_MAP = {
         period: "Summer 2015",
         link: "https://www.jhuapl.edu/",
         width: 180,
-    }
+    },
 };
 
 const Workplace = ({
