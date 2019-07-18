@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,700');
+
 $sections: 'home', 'projects', 'contact';
 $dark-text: rgb(92, 92, 92);
 $dark-text-blue: #1a3057;
@@ -10,7 +12,6 @@ $dark-text-blue: #1a3057;
 
 .App {
     text-align: center;
-    display: flex;
 }
   
 .App-logo {
@@ -24,28 +25,12 @@ $dark-text-blue: #1a3057;
   }
 }
 
-// substitute filler block to occupy App-header space (since App-header is position fixed)
-.App-header-sub {
-  background: transparent;
-  min-height: 100vh;
-  flex-grow: 1;
-  max-width: 25%;
-  font-size: calc(10px + 2vmin);
-  color: white;
-  padding: 15px 0;
-  > h1 {
-    margin: 30px;
-    color: transparent;
-  }
-}
-
 .App-header {
-  @extend .App-header-sub;
-  position: fixed;
-  background-color: #1a3057;
-  z-index: 1;
-  > h1 {
-    color: white;
+  color: white;
+
+  &__icon {
+    position: relative;
+    top: 5px;
   }
 }
 

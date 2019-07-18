@@ -1,21 +1,59 @@
-import React from 'react'
-import propic from '../profilepic.jpg';
+import React from 'react';
+import { Typography, IconButton } from '@material-ui/core';
+import { withStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Grid from '@material-ui/core/Grid';
+import Toolbar from '@material-ui/core/Toolbar';
+import EmailIcon from '@material-ui/icons/Email';
 
-export default () => ([
-    <header className="App-header">
-        <h1 style={{
-            "margin": "inherit 7px"
-        }}>Clayton<br/>Chu</h1>
-        <img src={propic} className="App-logo" alt="logo" />
-        <a href="#home-content" className="btn home-btn">Home</a>
-        <a href="#projects-content" className="btn projects-btn">Projects</a>
-        <a href="#contact-content" className="btn contact-btn">Contact Me</a>
-        <a href="#" className="btn resume-btn">Resume</a>
-    </header>,
-    <header className="App-header-sub">
-        <h1 style={{
-            "margin": "inherit 7px"
-        }}>Clayton<br/>Chu</h1>
-        {/* Substitute header that is not position absolute */}
-    </header>
-])
+import linkedinIcon from '../resources/icons/linkedin.png';
+
+const styles = {
+    nameRoot: {
+        color: 'white',
+    },
+    emailRoot: {
+        color: 'white',
+        position: 'relative',
+        top: 3,
+    },
+    headerColorPrimary: {
+        backgroundColor: 'rgba(0,0,0,0.3)',
+    }
+};
+
+const LinkedInIcon = () => (
+    <a href="https://linkedin.com/in/claytonjc" target="_blank">
+        <img width={36} className="social-media-icon" src={linkedinIcon} />
+    </a>
+);
+
+const HeaderLayer = ({ classes: { nameRoot, emailRoot, headerColorPrimary } }) => {
+    return (
+        <AppBar position="sticky" className="App-header" color="primary" classes={{ colorPrimary: headerColorPrimary }}>
+            <Toolbar>
+                <Grid container
+                    justify="space-between"
+                    alignItems="center"
+                    spacing={24}
+                >
+                    <Grid item>
+                        <IconButton>
+                            <Typography variant="h5" classes={{ root: nameRoot }}>Clayton Chu</Typography>
+                        </IconButton>
+                    </Grid>
+                    <Grid item>
+                        <IconButton className="App-header__icon">
+                            <LinkedInIcon />
+                        </IconButton>
+                        <IconButton classes={{ root: emailRoot }}>
+                            <EmailIcon fontSize="large" />
+                        </IconButton> 
+                    </Grid>
+                </Grid>
+            </Toolbar>
+        </AppBar>
+    );
+};
+
+export default withStyles(styles)(HeaderLayer);

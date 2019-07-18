@@ -1,6 +1,6 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,700");
 .App {
-  text-align: center;
-  display: flex; }
+  text-align: center; }
 
 .App-logo {
   height: 20vmin;
@@ -10,24 +10,11 @@
   border-color: #e4e3e3;
   border-width: 3px; }
 
-.App-header-sub, .App-header {
-  background: transparent;
-  min-height: 100vh;
-  flex-grow: 1;
-  max-width: 25%;
-  font-size: calc(10px + 2vmin);
-  color: white;
-  padding: 15px 0; }
-  .App-header-sub > h1, .App-header > h1 {
-    margin: 30px;
-    color: transparent; }
-
 .App-header {
-  position: fixed;
-  background-color: #1a3057;
-  z-index: 1; }
-  .App-header > h1 {
-    color: white; }
+  color: white; }
+  .App-header__icon {
+    position: relative;
+    top: 5px; }
 
 .App-link {
   color: #61dafb; }
