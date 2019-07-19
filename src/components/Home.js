@@ -19,6 +19,7 @@ import houzzLogo from '../resources/images/houzz.png';
 import girsLogo from '../resources/images/girs.png';
 import censusLogo from '../resources/images/census.png';
 import jhuaplLogo from '../resources/images/jhuapl.png';
+import { Z_BLOCK } from 'zlib';
 
 const NAME_LOGO_MAP = {
     houzz: {
@@ -129,7 +130,7 @@ const Workplace = ({
                 </div>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails className={classes.expansionPanelDetails}>
-                <Typography variant="subtitle2">{technologies.join(', ')}</Typography>
+                <Typography variant="subtitle2">{technologies.join(' | ')}</Typography>
                 {details}
             </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -137,10 +138,31 @@ const Workplace = ({
 );
 
 class Home extends Component {
+
+    static TITLE_MARGIN = 10; // vh
+
     constructor(props) {
         super(props);
         this.state = {
-            openPanel: -1, // no panel open
+            openPanel: 0, // -1 = no panel open
+            titleMargin: 8,
+        }
+        this.title = React.createRef();
+    }
+
+    componentDidMount() {
+        window.onscroll = this.resizeHeaderOnScroll;
+        this.title.current.style.marginTop = `${Home.TITLE_MARGIN}vh`;
+    }
+
+    resizeHeaderOnScroll = () => {
+        if (document.scrollingElement.scrollTop > 50) {
+            // const margin = 
+            // if (margin > 1) {
+
+            // }
+        } else {
+            this.title.current.style.fontSize = "3.75rem";
         }
     }
 
@@ -157,51 +179,64 @@ class Home extends Component {
         const { classes } = this.props;
         const { openPanel } = this.state;
         return (
-            <Grid
-                className={classes.grid}
-                container
-                justify="center"
-                spacing={2}
-            >
-                <Grid item>
-                    <Card className={classes.card}>
-                        <CardHeader
-                            title="Hi! I'm Clayton." 
-                            subheader="UCLA CS student + aspiring software engineer"
-                        />
-                        <CardMedia component="img" src={profilePic} className={classes.pic} />
-                        <CardContent>
-                            <Typography variant="h5" component="h2"></Typography>
-                            <Typography variant="body1" component="p">
-                                I am a UCLA student pursuing a Bachelors in computer science.
-                                My primary interests are in software engineering 
-                                and mathematical modeling, with machine learning and 
-                                other applied mathematical topics as secondary interests.
-                            </Typography>
-                        </CardContent>
-                    </Card>               
-                </Grid>
-                <Grid item>
-                    <Card className={classes.card}>
-                        <CardContent className={classes.cardContent}>
+            <div>
+                <Typography
+                    variant="h2"
+                    style={{
+                        color: 'white',
+                        fontWeight: 500,
+                        marginTop: `${Home.TITLE_MARGIN}vh`,
+                        transition: '0.2s',
+                    }}
+                    ref={this.title}
+                >Hi! I'm Clayton.</Typography>
+                <ExpandMoreIcon className="bounce" style={{ color: 'white', margin: '50px 0', width: 70, height: 70 }} />
+                <Grid
+                    className={classes.grid}
+                    container
+                    justify="center"
+                    spacing={2}
+                >
+                    <Grid item>
+                        <Card className={classes.card}>
                             <CardHeader
-                                title="Where I've Worked"
-                                subheader="Places I've Contributed My Skills To"
+                                title="About Me" 
+                                subheader="UCLA CS student + aspiring software engineer"
                             />
-                            <div className="home-workplaces">
-                                {Object.keys(NAME_LOGO_MAP).map((workplace, i) => (
-                                    <Workplace 
-                                        index={i}
-                                        expanded={openPanel === i}
-                                        handlePanelChange={this.handlePanelChange}
-                                        classes={classes}
-                                        {...NAME_LOGO_MAP[workplace]}
-                                    />))}
-                            </div>
-                        </CardContent>
-                    </Card>
+                            <CardMedia component="img" src={profilePic} className={classes.pic} />
+                            <CardContent>
+                                <Typography variant="h5" component="h2"></Typography>
+                                <Typography variant="body1" component="p">
+                                    I am a UCLA student pursuing a Bachelors in computer science.
+                                    My primary interests are in software engineering 
+                                    and mathematical modeling, with machine learning and 
+                                    other applied mathematical topics as secondary interests.
+                                </Typography>
+                            </CardContent>
+                        </Card>               
+                    </Grid>
+                    <Grid item>
+                        <Card className={classes.card}>
+                            <CardContent className={classes.cardContent}>
+                                <CardHeader
+                                    title="Where I've Worked"
+                                    subheader="Places I've Contributed My Skills To"
+                                />
+                                <div className="home-workplaces">
+                                    {Object.keys(NAME_LOGO_MAP).map((workplace, i) => (
+                                        <Workplace 
+                                            index={i}
+                                            expanded={openPanel === i}
+                                            handlePanelChange={this.handlePanelChange}
+                                            classes={classes}
+                                            {...NAME_LOGO_MAP[workplace]}
+                                        />))}
+                                </div>
+                            </CardContent>
+                        </Card>
+                    </Grid>
                 </Grid>
-            </Grid>
+            </div>  
         );
     }
 }

@@ -10,6 +10,22 @@ $dark-text-blue: #1a3057;
   min-height: $min-height;
 }
 
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.bounce {
+  animation-name: bounce;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
 .App {
     text-align: center;
     background-image: linear-gradient(to bottom right, #9fb8ad 0%, #1fc8db 75%, #2cb5e8 95%);
@@ -78,11 +94,6 @@ div.content {
     color: white;
     position: relative;
 
-    > div {
-      background-color: white;
-      padding: 20px;
-      height: 100%;
-    }
     @if $section == 'home' {
       @include section(rgb(221, 221, 221), 50vh, 40px);
       color: $dark-text;
@@ -119,35 +130,5 @@ div.content {
     &:hover {
       color: gray;
     }
-  }
-}
-
-.projects-row {
-  display: flex;
-
-  > a {
-    display: block;
-    margin: 40px;
-    flex-basis: 30%;
-    flex-grow: 1;
-    text-decoration: none;
-  }
-}
-
-.project-entry {
-  min-width: 30%;
-  min-height: 30%;
-  background-color: white;
-  color: black;
-  padding: 20px;
-  border: {
-    style: solid;
-    width: 1px;
-    color: black;
-    radius: 3px;
-  }
-  font: {
-    size: 14px;
-    family: sans-serif;
   }
 }
