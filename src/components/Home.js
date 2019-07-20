@@ -147,25 +147,33 @@ class Home extends Component {
         this.state = {
             openPanel: -1, // -1 = no panel open
             titleMargin: 8,
-            delayGrow: false,
+            delayGrow: {
+                about: false,
+                work: false,
+                edu: false,
+            },
         }
-        this.title = React.createRef();
     }
+
+    growOnDelay = component => (
+        setTimeout(() => this.setState(({ delayGrow }) => ({
+            delayGrow: {
+                ...delayGrow,
+                [component]: true,
+            },
+        })), 80)
+    );
 
     componentDidMount() {
-        window.onscroll = this.resizeHeaderOnScroll;
-        this.title.current.style.marginTop = `${Home.TITLE_MARGIN}vh`;
-        setTimeout(() => this.setState({ delayGrow: true }), 80)
+        this.growOnDelay('about');
     }
 
-    resizeHeaderOnScroll = () => {
-        if (document.scrollingElement.scrollTop > 50) {
-            // const margin = 
-            // if (margin > 1) {
-
-            // }
-        } else {
-            this.title.current.style.fontSize = "3.75rem";
+    componentDidUpdate() {
+        const { delayGrow: { about, work, edu } } = this.state;
+        if (about && !work && !edu) {
+            this.growOnDelay('work')
+        } else if (about && work && !edu) {
+            this.growOnDelay('edu');
         }
     }
 
@@ -183,16 +191,17 @@ class Home extends Component {
         const { openPanel, delayGrow } = this.state;
         return (
             <div>
-                <Typography
-                    variant="h2"
-                    style={{
-                        color: 'white',
-                        fontWeight: 500,
-                        marginTop: `${Home.TITLE_MARGIN}vh`,
-                        transition: '0.2s',
-                    }}
-                    ref={this.title}
-                >Hi! I'm Clayton.</Typography>
+                <Grow in>
+                    <Typography
+                        variant="h2"
+                        style={{
+                            color: 'white',
+                            fontWeight: 500,
+                            marginTop: `${Home.TITLE_MARGIN}vh`,
+                            transition: '0.2s',
+                        }}
+                    >Hi! I'm Clayton.</Typography>
+                </Grow>
                 <ExpandMoreIcon className="bounce" style={{ color: 'white', margin: '50px 0', width: 70, height: 70 }} />
                 <Grid
                     className={classes.grid}
@@ -201,7 +210,7 @@ class Home extends Component {
                     spacing={2}
                 >
                     <Grid item>
-                        <Grow in>
+                        <Grow in={delayGrow.about}>
                             <Card className={classes.card}>
                                 <a className="jump-links" href="#about-me">
                                     <CardHeader
@@ -223,7 +232,7 @@ class Home extends Component {
                         </Grow>             
                     </Grid>
                     <Grid item>
-                        <Grow in={delayGrow}>
+                        <Grow in={delayGrow.work}>
                             <Card className={classes.card}>
                                 <CardContent className={classes.cardContent}>
                                     <a className="jump-links" href="#about-me">
@@ -247,11 +256,13 @@ class Home extends Component {
                         </Grow>
                     </Grid>
                 </Grid>
-                <Card className={classes.card} style={{ margin: 'auto auto 20px auto' }}>
-                    <CardHeader title="Education" />
-                    <Typography variant="subtitle1">BS Computer Science - 2021</Typography>
-                    <CardMedia component="img" src={uclaPic} style={{ margin: 8, width: 'calc(100% - 16px)' }} />
-                </Card>
+                <Grow in={delayGrow.edu}>
+                    <Card className={classes.card} style={{ margin: 'auto auto 20px auto' }}>
+                        <CardHeader title="Education" />
+                        <Typography variant="subtitle1">BS Computer Science - 2021</Typography>
+                        <CardMedia component="img" src={uclaPic} style={{ margin: 8, width: 'calc(100% - 16px)' }} />
+                    </Card>
+                </Grow>
             </div>  
         );
     }
