@@ -11,15 +11,14 @@ import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import Grow from '@material-ui/core/Grow';
 
 import profilePic from '../resources/images/profilepic.jpg';
-import pianoPic from '../resources/images/piano.jpg';
-import meleePic from '../resources/images/melee.jpg';
+import uclaPic from '../resources/images/uclaeng.png';
 import houzzLogo from '../resources/images/houzz.png';
 import girsLogo from '../resources/images/girs.png';
 import censusLogo from '../resources/images/census.png';
 import jhuaplLogo from '../resources/images/jhuapl.png';
-import { Z_BLOCK } from 'zlib';
 
 const NAME_LOGO_MAP = {
     houzz: {
@@ -38,7 +37,7 @@ const NAME_LOGO_MAP = {
         position: "Student Software Engineer",
         period: "Since Nov 2018",
         link: "https://risksciences.ucla.edu",
-        technologies: ['React + Material-UI', 'REST', 'Django'],
+        technologies: ['React', 'Material-UI', 'REST', 'Django'],
         details: "At GIRS, I develop risk engineering tools used NASA JPL and Japan's Nuclear Regulation Authority. I have helped develop numerous frontend features, from automated academic report summaries of risk models to platform-wide internationalization to UI components for troubleshooting.",
         width: 350,
     },
@@ -93,6 +92,7 @@ const styles = {
     },
     expansionPanelSummary: {
         margin: 0,
+        display: 'block',
     },
     expansionPanelDetails: {
         backgroundColor: '#f0f0f0',
@@ -124,9 +124,10 @@ const Workplace = ({
                 classes={{ content: classes.expansionPanelSummary }}
                 expandIcon={<ExpandMoreIcon />}
             >
+                <Typography variant="button" component="p" style={{ textAlign: 'left', marginBottom: 10 }}>{period}</Typography>
                 <div className="workplace">
-                    <img className="workplace-logo" src={logo} width={width} />
-                    <Typography variant="subtitle1" component="p" style={{ marginBottom: 5 }}>{position} - {period}</Typography>
+                    <img className="workplace-logo" src={logo} width={width} style={{ marginBottom: 5 }} />
+                    <Typography variant="subtitle1" component="p" style={{ marginBottom: 10 }}>{position}</Typography>
                 </div>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails className={classes.expansionPanelDetails}>
@@ -139,13 +140,14 @@ const Workplace = ({
 
 class Home extends Component {
 
-    static TITLE_MARGIN = 10; // vh
+    static TITLE_MARGIN = 12; // vh
 
     constructor(props) {
         super(props);
         this.state = {
-            openPanel: 0, // -1 = no panel open
+            openPanel: -1, // -1 = no panel open
             titleMargin: 8,
+            delayGrow: false,
         }
         this.title = React.createRef();
     }
@@ -153,6 +155,7 @@ class Home extends Component {
     componentDidMount() {
         window.onscroll = this.resizeHeaderOnScroll;
         this.title.current.style.marginTop = `${Home.TITLE_MARGIN}vh`;
+        setTimeout(() => this.setState({ delayGrow: true }), 80)
     }
 
     resizeHeaderOnScroll = () => {
@@ -177,7 +180,7 @@ class Home extends Component {
 
     render() {
         const { classes } = this.props;
-        const { openPanel } = this.state;
+        const { openPanel, delayGrow } = this.state;
         return (
             <div>
                 <Typography
@@ -198,44 +201,57 @@ class Home extends Component {
                     spacing={2}
                 >
                     <Grid item>
-                        <Card className={classes.card}>
-                            <CardHeader
-                                title="About Me" 
-                                subheader="UCLA CS student + aspiring software engineer"
-                            />
-                            <CardMedia component="img" src={profilePic} className={classes.pic} />
-                            <CardContent>
-                                <Typography variant="h5" component="h2"></Typography>
-                                <Typography variant="body1" component="p">
-                                    I am a UCLA student pursuing a Bachelors in computer science.
-                                    My primary interests are in software engineering 
-                                    and mathematical modeling, with machine learning and 
-                                    other applied mathematical topics as secondary interests.
-                                </Typography>
-                            </CardContent>
-                        </Card>               
+                        <Grow in>
+                            <Card className={classes.card}>
+                                <a className="jump-links" href="#about-me">
+                                    <CardHeader
+                                        id="about-me"
+                                        title="A Little About Me" 
+                                        subheader="UCLA CS student + aspiring software engineer"
+                                    />
+                                </a>
+                                <CardMedia component="img" src={profilePic} className={classes.pic} />
+                                <CardContent>
+                                    <Typography variant="body1" component="p">
+                                        I am a UCLA student pursuing a Bachelors in computer science.
+                                        My primary interests are in software engineering 
+                                        and mathematical modeling, with machine learning and 
+                                        other applied mathematical topics as secondary interests.
+                                    </Typography>
+                                </CardContent>
+                            </Card>
+                        </Grow>             
                     </Grid>
                     <Grid item>
-                        <Card className={classes.card}>
-                            <CardContent className={classes.cardContent}>
-                                <CardHeader
-                                    title="Where I've Worked"
-                                    subheader="Places I've Contributed My Skills To"
-                                />
-                                <div className="home-workplaces">
-                                    {Object.keys(NAME_LOGO_MAP).map((workplace, i) => (
-                                        <Workplace 
-                                            index={i}
-                                            expanded={openPanel === i}
-                                            handlePanelChange={this.handlePanelChange}
-                                            classes={classes}
-                                            {...NAME_LOGO_MAP[workplace]}
-                                        />))}
-                                </div>
-                            </CardContent>
-                        </Card>
+                        <Grow in={delayGrow}>
+                            <Card className={classes.card}>
+                                <CardContent className={classes.cardContent}>
+                                    <a className="jump-links" href="#about-me">
+                                        <CardHeader
+                                            title="Where I've Worked"
+                                            subheader="Places I've Contributed My Skills To"
+                                        />
+                                    </a>
+                                    <div className="home-workplaces">
+                                        {Object.keys(NAME_LOGO_MAP).map((workplace, i) => (
+                                            <Workplace 
+                                                index={i}
+                                                expanded={openPanel === i}
+                                                handlePanelChange={this.handlePanelChange}
+                                                classes={classes}
+                                                {...NAME_LOGO_MAP[workplace]}
+                                            />))}
+                                    </div>
+                                </CardContent>
+                            </Card>
+                        </Grow>
                     </Grid>
                 </Grid>
+                <Card className={classes.card} style={{ margin: 'auto auto 20px auto' }}>
+                    <CardHeader title="Education" />
+                    <Typography variant="subtitle1">BS Computer Science - 2021</Typography>
+                    <CardMedia component="img" src={uclaPic} style={{ margin: 8, width: 'calc(100% - 16px)' }} />
+                </Card>
             </div>  
         );
     }

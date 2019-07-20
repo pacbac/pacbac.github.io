@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,700');
 
-$sections: 'home', 'projects', 'contact';
+$sections: 'home', 'projects', 'hobbies';
 $dark-text: rgb(92, 92, 92);
 $dark-text-blue: #1a3057;
 
 @mixin section($color, $min-height: 50vh, $padding: 25px){
-  background-color: $color;
+  background: $color;
   padding: $padding;
   min-height: $min-height;
 }
@@ -28,7 +28,8 @@ $dark-text-blue: #1a3057;
 
 .App {
     text-align: center;
-    background-image: linear-gradient(to bottom right, #9fb8ad 0%, #1fc8db 75%, #2cb5e8 95%);
+    background-image: url(../resources/images/wallpaper.png);
+    //  linear-gradient(to bottom right, #9fb8ad 0%, #1fc8db 75%, #2cb5e8 95%);
     min-height: 500px; 
 
     /* Create the parallax scrolling effect */
@@ -89,6 +90,15 @@ div.content {
   }
 }
 
+.workplace {
+  margin: auto;
+}
+
+a.jump-links {
+  text-decoration: none;
+  color: black;
+}
+
 @each $section in $sections {
   ##{$section}-content {
     color: white;
@@ -98,23 +108,14 @@ div.content {
       @include section(rgb(221, 221, 221), 50vh, 40px);
       color: $dark-text;
     } @else if $section == 'projects' {
-      @include section(rgba(23, 39, 126, 0.664));
+      @include section(#f7f4ec);
+      
+      .project-details {
+        background-color: #f0f0f0;
+        padding: 10px;
+      }
       box-sizing: border-box;
-    } @else if $section == 'contact' {
-      @include section(rgb(221, 221, 221), 15vh);
-      color: $dark-text-blue;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-
-      > h1 {
-        margin-top: 0;
-      }
-
-      > * {
-        position: relative;
-        bottom: 20px;
-      }
+    } @else if $section == 'hobbies' {
     }
   }
 }

@@ -19,6 +19,7 @@ const styles = {
     },
     headerColorPrimary: {
         backgroundColor: 'rgba(0,0,0,0.3)',
+        boxShadow: '0 0 0',
     }
 };
 
@@ -47,7 +48,9 @@ const HeaderLayer = ({ classes: { nameRoot, emailRoot, headerColorPrimary } }) =
                             <LinkedInIcon />
                         </IconButton>
                         <IconButton classes={{ root: emailRoot }}>
-                            <EmailIcon fontSize="large" />
+                            <a href="mailto:claytonchu99@gmail.com" style={{ color: 'white', textDecoration: 'none' }}>
+                                <EmailIcon fontSize="large" />
+                            </a>
                         </IconButton> 
                     </Grid>
                 </Grid>
