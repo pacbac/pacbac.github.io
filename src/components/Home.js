@@ -27,7 +27,7 @@ const NAME_LOGO_MAP = {
         position: "Software Engineering Intern",
         period: "Summer 2019",
         link: "https://houzz.com",
-        technologies: ['React', 'PHP', 'SQL', 'GraphQL', 'Java'],
+        technologies: ['React', 'PHP', 'SQL', 'GraphQL', 'Thrift', 'Java'],
         details: "At Houzz, I worked on the Marketplace Ads Team and Trade Growth team. In my time there, I worked on a project to add new legal consent components for advertisers on the houzz.com website, helped build a platform to assist vendors in pricing their products on the website, and implemented site perks to promote the Houzz Pro program.",
         width: 150,
     },

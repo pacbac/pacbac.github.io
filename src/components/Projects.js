@@ -9,7 +9,7 @@ import handleViewport from 'react-in-viewport';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import IconButton from '@material-ui/core/IconButton';
 
-import cgschedulePic from '../resources/images/cgschedule.png';
+// import cgschedulePic from '../resources/images/cgschedule.png';
 
 const PROJECT_MAP = {
     mcm2019: {
@@ -20,7 +20,7 @@ const PROJECT_MAP = {
     },
     cgscheduler: {
         title: "Cell Group Meeting Scheduler",
-        snapshot: cgschedulePic,
+        // snapshot: cgschedulePic,
         details: "This is a small, customized app I made for about ~25 people to easily view and schedule their biweekly meetup group. <br/>I have also built in certain features such as automatically notifying the scheduler of date/role conflicts, autogenerating certain columns, etc. It is still being actively used to this day.",
         technologies: ["React", "Redux", "SASS", "Python", "PostgreSQL", "jQuery", "Shell"],
         period: "Jun - Sep 2018",
