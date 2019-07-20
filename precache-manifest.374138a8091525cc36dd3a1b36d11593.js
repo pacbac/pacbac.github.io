@@ -1,15 +1,15 @@
 self.__precacheManifest = [
   {
-    "revision": "49978a3048279f46288d187a9da12489",
-    "url": "/static/media/girs.49978a30.png"
+    "revision": "0e5c003763f5cf0ada22c05aeaa83db6",
+    "url": "/static/media/census.0e5c0037.png"
   },
   {
-    "revision": "12ecaab1245b0e713356",
-    "url": "/static/css/main.05ea5065.chunk.css"
+    "revision": "0a92e88405f63648a054",
+    "url": "/static/css/main.0c2626c6.chunk.css"
   },
   {
-    "revision": "e8ddb0b7d23eb774da69",
-    "url": "/static/js/1.e8ddb0b7.chunk.js"
+    "revision": "2b9c238001f10cca056a",
+    "url": "/static/js/1.2b9c2380.chunk.js"
   },
   {
     "revision": "229c360febb4351a89df",
@@ -24,12 +24,12 @@ self.__precacheManifest = [
     "url": "/static/media/uclaeng.23220630.png"
   },
   {
-    "revision": "12ecaab1245b0e713356",
-    "url": "/static/js/main.12ecaab1.chunk.js"
+    "revision": "49978a3048279f46288d187a9da12489",
+    "url": "/static/media/girs.49978a30.png"
   },
   {
-    "revision": "0e5c003763f5cf0ada22c05aeaa83db6",
-    "url": "/static/media/census.0e5c0037.png"
+    "revision": "0a92e88405f63648a054",
+    "url": "/static/js/main.0a92e884.chunk.js"
   },
   {
     "revision": "748aca75e9ca8c7edcd8fd3f871ffe90",
@@ -44,11 +44,19 @@ self.__precacheManifest = [
     "url": "/static/media/melee.ca044489.jpg"
   },
   {
+    "revision": "e6521a9ed87b341b9354c32bd7d4727b",
+    "url": "/static/media/sheetmusic.e6521a9e.png"
+  },
+  {
+    "revision": "d7d21ce6826f84b84bda9617590ab8bc",
+    "url": "/static/media/gcwallpaper.d7d21ce6.png"
+  },
+  {
     "revision": "2057ce61d2aa5e48f85924f3c0f641ee",
     "url": "/static/media/wallpaper.2057ce61.png"
   },
   {
-    "revision": "7d3658e350776fb1d872aace1f919faa",
+    "revision": "47bf7afc179a99b8414f8a0039cfb165",
     "url": "/index.html"
   }
 ];
