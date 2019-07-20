@@ -52,7 +52,6 @@
   background-color: gray; }
 
 div.content {
-  position: relative;
   width: 100%;
   padding-top: 20px; }
   div.content h1 {
@@ -86,7 +85,14 @@ a.jump-links {
 
 #hobbies-content {
   color: white;
-  position: relative; }
+  position: relative;
+  padding-bottom: 40px;
+  overflow: hidden;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../resources/images/gcwallpaper.png);
+  background-attachment: fixed;
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-size: calc(1.2 * 100%); }
 
 .contact-links > a {
   text-decoration: none; }

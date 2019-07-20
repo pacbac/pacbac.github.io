@@ -6,8 +6,7 @@ import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
 import handleViewport from 'react-in-viewport';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import IconButton from '@material-ui/core/IconButton';
+import throttle from 'lodash.throttle';
 
 // import cgschedulePic from '../resources/images/cgschedule.png';
 
@@ -51,7 +50,7 @@ const styles = {
     }
 };
 
-let ProjectEntry = ({
+const ProjectEntry = ({
     classes,
     title,
     details,
@@ -62,7 +61,7 @@ let ProjectEntry = ({
     enterCount,
 }) => {
 
-    console.log(inViewport, enterCount);
+    // console.log(inViewport, enterCount);
     const getProjectEntryStyle = () => {
         // if (inViewport && enterCount === 1) {
         //     return { WebkitTransition: 'opacity 0.75s ease-in-out' };
@@ -89,10 +88,35 @@ let ProjectEntry = ({
     );
 };
 
-ProjectEntry = handleViewport(ProjectEntry);
+const ViewportProjectEntry = handleViewport(ProjectEntry);
 
 class Projects extends Component {
-    render(){
+
+    static COLOR_CHANGE_MARGIN = 30; // give some flexibility for the app bar color to change
+
+    constructor(props) {
+        super(props);
+        this.container = React.createRef();
+    }
+
+    shouldChangeFontColor = () => {
+        const { offsetTop, offsetHeight } = this.container.current;
+        if(window.scrollY + Projects.COLOR_CHANGE_MARGIN > offsetTop && window.scrollY + Projects.COLOR_CHANGE_MARGIN < offsetTop + offsetHeight) {
+            this.props.changeAppBarFontColor('black');
+        } else {
+            this.props.changeAppBarFontColor('white');
+        }
+    }
+
+    componentDidMount() {
+        document.addEventListener("scroll", throttle(this.shouldChangeFontColor, 200));
+    }
+
+    componentWillUnMount() {
+        document.removeEventListener("scroll");
+    }
+
+    render() {
         const { classes } = this.props;
         const leftColProjects = [];
         const rightColProjects = [];
@@ -105,13 +129,13 @@ class Projects extends Component {
             }
         });
         return (
-            <div id="projects-content">
+            <div id="projects-content" ref={this.container}>
                 <Typography
                     variant="h2"
                     style={{
                         color: 'black',
                         fontWeight: 500,
-                        margin: '4vw 0',
+                        margin: '6vw 0',
                         transition: '0.2s',
                     }}
                 >Personal Projects</Typography>
@@ -126,7 +150,7 @@ class Projects extends Component {
                     </Grid>
                     <Grid item container justify="center" spacing={2}>
                         {rightColProjects.map(project => (
-                            <ProjectEntry classes={classes} {...project} />
+                            <ViewportProjectEntry classes={classes} {...project} onEnterViewport={() => console.log('hello')} />
                         ))}
                     </Grid>
                     <Grid item container justify="center">

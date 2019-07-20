@@ -126,7 +126,7 @@ const Workplace = ({
             >
                 <Typography variant="button" component="p" style={{ textAlign: 'left', marginBottom: 10 }}>{period}</Typography>
                 <div className="workplace">
-                    <img className="workplace-logo" src={logo} width={width} style={{ marginBottom: 5 }} />
+                    <img className="workplace-logo" src={logo} width={width} style={{ marginBottom: 5 }} alt={name} />
                     <Typography variant="subtitle1" component="p" style={{ marginBottom: 10 }}>{position}</Typography>
                 </div>
             </ExpansionPanelSummary>

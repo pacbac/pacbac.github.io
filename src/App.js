@@ -6,13 +6,23 @@ import Projects from './components/Projects';
 import Hobbies from './components/Hobbies';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      appBarFontColor: 'white',
+    }
+  }
+
+  changeAppBarFontColor = appBarFontColor => this.setState({ appBarFontColor });
+
   render() {
+    const { appBarFontColor } = this.state;
     return (
       <div className="App">
-        <HeaderLayer/>
+        <HeaderLayer appBarFontColor={appBarFontColor} />
         <div className="content">
-          <Home/>
-          <Projects/>
+          <Home />
+          <Projects changeAppBarFontColor={this.changeAppBarFontColor} />
           <Hobbies />
         </div>
       </div>

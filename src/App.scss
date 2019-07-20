@@ -81,7 +81,6 @@ $dark-text-blue: #1a3057;
 }
 
 div.content {
-  position: relative;
   width: 100%;
   padding-top: 20px;
 
@@ -116,6 +115,13 @@ a.jump-links {
       }
       box-sizing: border-box;
     } @else if $section == 'hobbies' {
+        padding-bottom: 40px;
+        overflow: hidden;
+        background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(../resources/images/gcwallpaper.png);
+        background-attachment: fixed;
+        background-position: left top;
+        background-repeat: no-repeat;
+        background-size: calc(1.2 * 100%);
     }
   }
 }
