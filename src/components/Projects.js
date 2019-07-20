@@ -109,7 +109,7 @@ class Projects extends Component {
     }
 
     componentDidMount() {
-        document.addEventListener("scroll", throttle(this.shouldChangeFontColor, 200));
+        document.addEventListener("scroll", throttle(this.shouldChangeFontColor, 350));
     }
 
     componentWillUnMount() {

@@ -29,13 +29,13 @@ const styles = {
 
 const LinkedInIcon = ({ color }) => (
     <Link href="https://linkedin.com/in/claytonjc" target="_blank" rel="noopener">
-        <img width={36} className="social-media-icon" src={color == 'black' ? linkedinBlackIcon : linkedinWhiteIcon} alt="linkedin" />
+        <img width={36} className="social-media-icon" src={color === 'black' ? linkedinBlackIcon : linkedinWhiteIcon} alt="linkedin" />
     </Link>
 );
 
 const GithubIcon = ({ color }) => (
     <Link href="https://github.com/pacbac" target="_blank" rel="noopener">
-        <img width={36} className="social-media-icon" src={color == 'black' ? githubBlackIcon : githubWhiteIcon} alt="github" />
+        <img width={36} className="social-media-icon" src={color === 'black' ? githubBlackIcon : githubWhiteIcon} alt="github" />
     </Link>
 );
 
