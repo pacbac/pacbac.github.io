@@ -140,6 +140,14 @@ class Projects extends Component {
                     }}
                 >Personal Projects</Typography>
                 <Grid container spacing={2}>
+                    <Grid item container justify="center">
+                        <ProjectEntry classes={classes} {...{
+                            title: "This website!",
+                            details: "",
+                            technologies: ["React", "Material-UI"],
+                            period: "Jul 2019",
+                        }} />
+                    </Grid>
                     <Grid item container justify="center" spacing={2}>
                         {leftColProjects.map(project => (
                             <ProjectEntry
@@ -152,14 +160,6 @@ class Projects extends Component {
                         {rightColProjects.map(project => (
                             <ViewportProjectEntry classes={classes} {...project} onEnterViewport={() => console.log('hello')} />
                         ))}
-                    </Grid>
-                    <Grid item container justify="center">
-                        <ProjectEntry classes={classes} {...{
-                            title: "This website!",
-                            details: "",
-                            technologies: ["React", "Material-UI"],
-                            period: "Jul 2019",
-                        }} />
                     </Grid>
                 </Grid>
             </div>

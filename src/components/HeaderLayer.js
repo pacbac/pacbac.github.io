@@ -16,10 +16,14 @@ const styles = {
     nameRoot: {
         color: 'white',
     },
-    emailRoot: {
+    buttonRoot: {
         color: 'white',
         position: 'relative',
         top: 3,
+        '&:hover': {
+            transform: 'scale(1.1)',
+            transition: 'all ease 0.2s',
+        },
     },
     headerColorPrimary: {
         backgroundColor: 'transparent',
@@ -39,8 +43,8 @@ const GithubIcon = ({ color }) => (
     </Link>
 );
 
-const HeaderLayer = ({ classes: { nameRoot, emailRoot, headerColorPrimary }, appBarFontColor }) => {
-
+const HeaderLayer = ({ classes: { nameRoot, buttonRoot, headerColorPrimary }, appBarFontColor }) => {
+    const buttonStyle = { backgroundColor: 'transparent'};
     return (
         <AppBar position="sticky" className="App-header" color="primary" classes={{ colorPrimary: headerColorPrimary }}>
             <Toolbar>
@@ -50,18 +54,18 @@ const HeaderLayer = ({ classes: { nameRoot, emailRoot, headerColorPrimary }, app
                     spacing={24}
                 >
                     <Grid item>
-                        <IconButton>
+                        <IconButton disableRipple>
                             <Typography variant="h5" style={{ color: appBarFontColor }} classes={{ root: nameRoot }}>Clayton Chu</Typography>
                         </IconButton>
                     </Grid>
                     <Grid item>
-                        <IconButton className="App-header__icon">
+                        <IconButton className="App-header__icon" style={buttonStyle} disableRipple>
                             <GithubIcon color={appBarFontColor} />
                         </IconButton>
-                        <IconButton className="App-header__icon">
+                        <IconButton className="App-header__icon" style={buttonStyle} disableRipple>
                             <LinkedInIcon color={appBarFontColor} />
                         </IconButton>
-                        <IconButton classes={{ root: emailRoot }}>
+                        <IconButton classes={{ root: buttonRoot }} style={buttonStyle} disableRipple>
                             <a href="mailto:claytonchu99@gmail.com" style={{ color: appBarFontColor, textDecoration: 'none' }}>
                                 <EmailIcon fontSize="large" />
                             </a>

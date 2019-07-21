@@ -54,7 +54,6 @@ $dark-text-blue: #1a3057;
   color: white;
 
   &__icon {
-    position: relative;
     top: 5px;
   }
 }
@@ -126,16 +125,9 @@ a.jump-links {
   }
 }
 
-.contact-links > a {
-  text-decoration: none;
-
-  > i {
-    margin: 20px;
-    color: $dark-text-blue;
-    font-size: 40px;
-
+.social-media-icon {
     &:hover {
-      color: gray;
-    }
+      transform: scale(1.1),;
+      transition: all ease 0.2s;
   }
 }

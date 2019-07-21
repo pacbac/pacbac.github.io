@@ -26,6 +26,10 @@ const styles = {
     },
     fab: {
         margin: 10,
+        '&:hover': {
+            transform: 'scale(1.1)',
+            transition: 'all ease 0.2s',
+        }
     },
 };
 

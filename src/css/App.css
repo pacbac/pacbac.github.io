@@ -32,7 +32,6 @@
 .App-header {
   color: white; }
   .App-header__icon {
-    position: relative;
     top: 5px; }
 
 .App-link {
@@ -94,11 +93,6 @@ a.jump-links {
   background-repeat: no-repeat;
   background-size: calc(1.2 * 100%); }
 
-.contact-links > a {
-  text-decoration: none; }
-  .contact-links > a > i {
-    margin: 20px;
-    color: #1a3057;
-    font-size: 40px; }
-    .contact-links > a > i:hover {
-      color: gray; }
+.social-media-icon:hover {
+  transform: scale(1.1);
+  transition: all ease 0.2s; }
