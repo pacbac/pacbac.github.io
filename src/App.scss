@@ -28,9 +28,9 @@ $dark-text-blue: #1a3057;
 
 .App {
     text-align: center;
-    background-image: url(../resources/images/wallpaper.png);
-    //  linear-gradient(to bottom right, #9fb8ad 0%, #1fc8db 75%, #2cb5e8 95%);
+    background: linear-gradient(to bottom right, #65ccbb, #65ccbb 25%, #57ba98 25%, #57ba98 75%, #65ccbb 75%, #65ccbb);
     min-height: 500px; 
+    transition: all ease 0.1s;
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;

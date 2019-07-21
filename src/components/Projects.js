@@ -93,27 +93,33 @@ const ViewportProjectEntry = handleViewport(ProjectEntry);
 class Projects extends Component {
 
     static COLOR_CHANGE_MARGIN = 30; // give some flexibility for the app bar color to change
+    static THROTTLE_DELAY = 200;
 
     constructor(props) {
         super(props);
         this.container = React.createRef();
+        this.throttleChangeFontColor = throttle(this.shouldChangeFontColor, Projects.THROTTLE_DELAY);
     }
 
     shouldChangeFontColor = () => {
         const { offsetTop, offsetHeight } = this.container.current;
-        if(window.scrollY + Projects.COLOR_CHANGE_MARGIN > offsetTop && window.scrollY + Projects.COLOR_CHANGE_MARGIN < offsetTop + offsetHeight) {
-            this.props.changeAppBarFontColor('black');
-        } else {
+        const { appBarFontColor } = this.props;
+        if (window.scrollY + Projects.COLOR_CHANGE_MARGIN > offsetTop
+            && window.scrollY + Projects.COLOR_CHANGE_MARGIN < offsetTop + offsetHeight) {
+                if(appBarFontColor !== 'black') {
+                    this.props.changeAppBarFontColor('black');
+                }
+        } else if (appBarFontColor !== 'white') {
             this.props.changeAppBarFontColor('white');
         }
     }
 
     componentDidMount() {
-        document.addEventListener("scroll", throttle(this.shouldChangeFontColor, 300));
+        document.addEventListener("scroll", this.throttleChangeFontColor);
     }
 
     componentWillUnMount() {
-        document.removeEventListener("scroll");
+        document.removeEventListener("scroll", this.throttleChangeFontColor);
     }
 
     render() {

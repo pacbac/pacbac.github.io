@@ -41,12 +41,14 @@ class Education extends Component {
     render() {
         const { delayGrow, classes } = this.props;
         const { isFlipped } = this.state;
+        const flipLabel = <Typography variant="overline" style={{ display: 'inline' }}>Flip</Typography>;
+
         return (
             <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal" style={{ transition: 'all ease 0.2s' }}>
                 <Grow in={delayGrow.edu} key="front">
                     <Card className={classes.card} style={{ margin: 'auto auto 20px auto' }}>
                         <IconButton style={{ float: 'right' }} onClick={this.toggleFlip}>
-                            <FlipToBackIcon />
+                            {flipLabel}<FlipToBackIcon />
                         </IconButton>
                         <CardHeader title="Education" />
                         <Typography variant="subtitle1">BS Computer Science - 2021</Typography>
@@ -59,7 +61,7 @@ class Education extends Component {
                     key="back"
                 >
                     <IconButton style={{ float: 'right' }} onClick={this.toggleFlip}>
-                        <FlipToFrontIcon />
+                        {flipLabel}<FlipToFrontIcon />
                     </IconButton>
                     <CardHeader title="Classes I've Taken" />
                     <CardContent style={{ textAlign: 'left', paddingTop: 0 }}>

@@ -5,4 +5,7 @@ export default createMuiTheme({
         fontFamily: 'Poppins',
         fontWeight: 300,
     },
+    card: {
+        main: '#f2f2f2'
+    },
 });

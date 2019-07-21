@@ -60,7 +60,7 @@ const NAME_LOGO_MAP = {
     },
 };
 
-const styles = {
+const styles = theme => ({
     grid: {
         marginBottom: 20,
         width: '100%',
@@ -95,7 +95,7 @@ const styles = {
         backgroundColor: '#f0f0f0',
         display: 'block',
     },
-};
+});
 
 class Home extends Component {
 
@@ -149,7 +149,7 @@ class Home extends Component {
         const { classes } = this.props;
         const { openPanel, delayGrow } = this.state;
         return (
-            <div>
+            <div className="home-content">
                 <Grow in>
                     <Typography
                         variant="h2"
