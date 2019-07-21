@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/static/media/census.0e5c0037.png"
   },
   {
-    "revision": "40008a0120c55fbc3600",
-    "url": "/static/css/main.0c2626c6.chunk.css"
+    "revision": "a889b3fd5b2243601801",
+    "url": "/static/css/main.60cb846f.chunk.css"
   },
   {
     "revision": "2b9c238001f10cca056a",
@@ -28,8 +28,8 @@ self.__precacheManifest = [
     "url": "/static/media/girs.49978a30.png"
   },
   {
-    "revision": "40008a0120c55fbc3600",
-    "url": "/static/js/main.40008a01.chunk.js"
+    "revision": "a889b3fd5b2243601801",
+    "url": "/static/js/main.a889b3fd.chunk.js"
   },
   {
     "revision": "748aca75e9ca8c7edcd8fd3f871ffe90",
@@ -56,7 +56,7 @@ self.__precacheManifest = [
     "url": "/static/media/wallpaper.2057ce61.png"
   },
   {
-    "revision": "4edaff612b4c72d51e85c09b18d8cf0f",
+    "revision": "1cf0f297ffc36be0196bacec2888f88c",
     "url": "/index.html"
   }
 ];
