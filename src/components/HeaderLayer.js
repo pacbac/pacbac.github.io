@@ -21,7 +21,7 @@ const styles = {
         position: 'relative',
         top: 3,
         '&:hover': {
-            transform: 'scale(1.1)',
+            transform: 'scale(1.2)',
             transition: 'all ease 0.2s',
         },
     },
@@ -54,9 +54,7 @@ const HeaderLayer = ({ classes: { nameRoot, buttonRoot, headerColorPrimary }, ap
                     spacing={24}
                 >
                     <Grid item>
-                        <IconButton disableRipple>
-                            <Typography variant="h5" style={{ color: appBarFontColor }} classes={{ root: nameRoot }}>Clayton Chu</Typography>
-                        </IconButton>
+                        <Typography variant="h5" style={{ color: appBarFontColor }} classes={{ root: nameRoot }}>Clayton Chu</Typography>
                     </Grid>
                     <Grid item>
                         <IconButton className="App-header__icon" style={buttonStyle} disableRipple>

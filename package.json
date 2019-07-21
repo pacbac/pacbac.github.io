@@ -8,6 +8,7 @@
     "@material-ui/icons": "^4.2.1",
     "lodash.throttle": "^4.1.1",
     "react": "^16.8.6",
+    "react-card-flip": "^0.8.1",
     "react-dom": "^16.8.6",
     "react-in-viewport": "0.0.38",
     "react-scripts": "2.1.1"

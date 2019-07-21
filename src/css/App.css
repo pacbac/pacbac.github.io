@@ -94,5 +94,5 @@ a.jump-links {
   background-size: calc(1.2 * 100%); }
 
 .social-media-icon:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
   transition: all ease 0.2s; }

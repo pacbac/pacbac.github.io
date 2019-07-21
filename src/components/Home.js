@@ -6,15 +6,12 @@ import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import Divider from '@material-ui/core/Divider';
-import ExpansionPanel from '@material-ui/core/ExpansionPanel';
-import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
-import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Grow from '@material-ui/core/Grow';
 
+import Workplace from './Workplace';
+import Education from './Education';
 import profilePic from '../resources/images/profilepic.jpg';
-import uclaPic from '../resources/images/uclaeng.png';
 import houzzLogo from '../resources/images/houzz.png';
 import girsLogo from '../resources/images/girs.png';
 import censusLogo from '../resources/images/census.png';
@@ -99,44 +96,6 @@ const styles = {
         display: 'block',
     },
 };
-
-const Workplace = ({
-    classes,
-    expanded,
-    index,
-    handlePanelChange,
-    name,
-    logo,
-    width,
-    position,
-    period,
-    details,
-    technologies,
-}) => (
-    <React.Fragment>
-        <Divider className={classes.divider} />
-        <ExpansionPanel
-            expanded={expanded}
-            classes={{ root: classes.expansionPanel }}
-            onChange={() => handlePanelChange(index)}
-        >
-            <ExpansionPanelSummary 
-                classes={{ content: classes.expansionPanelSummary }}
-                expandIcon={<ExpandMoreIcon />}
-            >
-                <Typography variant="button" component="p" style={{ textAlign: 'left', marginBottom: 10 }}>{period}</Typography>
-                <div className="workplace">
-                    <img className="workplace-logo" src={logo} width={width} style={{ marginBottom: 5 }} alt={name} />
-                    <Typography variant="subtitle1" component="p" style={{ marginBottom: 10 }}>{position}</Typography>
-                </div>
-            </ExpansionPanelSummary>
-            <ExpansionPanelDetails className={classes.expansionPanelDetails}>
-                <Typography variant="subtitle2">{technologies.join(' | ')}</Typography>
-                {details}
-            </ExpansionPanelDetails>
-        </ExpansionPanel>
-    </React.Fragment>
-);
 
 class Home extends Component {
 
@@ -256,13 +215,7 @@ class Home extends Component {
                         </Grow>
                     </Grid>
                 </Grid>
-                <Grow in={delayGrow.edu}>
-                    <Card className={classes.card} style={{ margin: 'auto auto 20px auto' }}>
-                        <CardHeader title="Education" />
-                        <Typography variant="subtitle1">BS Computer Science - 2021</Typography>
-                        <CardMedia component="img" src={uclaPic} style={{ margin: 8, width: 'calc(100% - 16px)' }} />
-                    </Card>
-                </Grow>
+                <Education classes={classes} delayGrow={delayGrow} />
             </div>  
         );
     }
