@@ -66,18 +66,25 @@ const styles = theme => ({
         width: '100%',
     },
     card: {
-        maxWidth: '30vw',
         position: 'relative',
         borderRadius: 0,
+        maxWidth: '30vw',
+        overflow: 'visible',
+        margin: 0,
+    },
+    cardHeader: {
+        color: theme.typography.color.hover,
     },
     cardContent: {
         padding: '16px 0',
+        color: theme.typography.color.hover,
         '&:last-child': {
             padding: 0,
         },
     },
     divider: {
-        margin: '0 16px',
+        backgroundColor: '#8adbcd',
+        margin: 'auto 20px',
     },
     pic: {
         width: '100%',
@@ -85,16 +92,43 @@ const styles = theme => ({
     expansionPanel: {
         boxShadow: '0 0 0',
         position: 'static',
-        margin: '16px 0 0 0 !important',
+        transition: 'all ease 0.1s',
+        paddingTop: 16,
+        margin: '0 !important',
+        '&:hover': {
+            transform: 'scale(1.02)',
+            boxShadow: '1px 1px 2px rgba(0,0,0,0.5)',
+        }
     },
     expansionPanelSummary: {
         margin: 0,
         display: 'block',
     },
     expansionPanelDetails: {
-        backgroundColor: '#f0f0f0',
+        backgroundColor: '#d5ebe7',
         display: 'block',
     },
+    expandMoreIcon: {
+        color: 'white',
+        margin: '50px 0',
+        width: 70,
+        height: 70,
+        '&:hover': {
+            color: theme.typography.color.hover,
+        }
+    },
+    expandMoreIcon2: {
+        color: theme.typography.color.hover,
+    },
+    title: {
+        color: 'white',
+        fontWeight: 500,
+        margin: `${Home.TITLE_MARGIN}vh auto auto auto`,
+        transition: '0.2s',
+        borderBottom: 'solid #3b945e 3px',
+        display: 'table',
+        padding: 10,
+    }
 });
 
 class Home extends Component {
@@ -153,15 +187,12 @@ class Home extends Component {
                 <Grow in>
                     <Typography
                         variant="h2"
-                        style={{
-                            color: 'white',
-                            fontWeight: 500,
-                            marginTop: `${Home.TITLE_MARGIN}vh`,
-                            transition: '0.2s',
-                        }}
-                    >Hi! I'm Clayton.</Typography>
+                        className={classes.title}
+                    >HI! I'M CLAYTON<span className="punc">.</span></Typography>
                 </Grow>
-                <ExpandMoreIcon className="bounce" style={{ color: 'white', margin: '50px 0', width: 70, height: 70 }} />
+                <a href="#about-me">
+                    <ExpandMoreIcon className="bounce" className={classes.expandMoreIcon} />
+                </a>
                 <Grid
                     className={classes.grid}
                     container
@@ -171,8 +202,9 @@ class Home extends Component {
                     <Grid item>
                         <Grow in={delayGrow.about}>
                             <Card className={classes.card}>
-                                <a className="jump-links" href="#about-me">
+                                <a className="jump-links">
                                     <CardHeader
+                                        classes={{ root: classes.cardHeader}}
                                         id="about-me"
                                         title="A Little About Me" 
                                         subheader="UCLA CS student + aspiring software engineer"
@@ -193,13 +225,13 @@ class Home extends Component {
                     <Grid item>
                         <Grow in={delayGrow.work}>
                             <Card className={classes.card}>
+                                <a className="jump-links">
+                                    <CardHeader
+                                        title="Where I've Worked"
+                                        subheader="Places I've Contributed My Skills To"
+                                    />
+                                </a>
                                 <CardContent className={classes.cardContent}>
-                                    <a className="jump-links" href="#about-me">
-                                        <CardHeader
-                                            title="Where I've Worked"
-                                            subheader="Places I've Contributed My Skills To"
-                                        />
-                                    </a>
                                     <div className="home-workplaces">
                                         {Object.keys(NAME_LOGO_MAP).map((workplace, i) => (
                                             <Workplace 

@@ -5,6 +5,9 @@
   50% {
     transform: translateY(-12px); } }
 
+html {
+  scroll-behavior: smooth; }
+
 .bounce {
   animation-name: bounce;
   animation-duration: 1s;
@@ -13,7 +16,7 @@
 
 .App {
   text-align: center;
-  background: linear-gradient(to bottom right, #65ccbb, #65ccbb 25%, #57ba98 25%, #57ba98 75%, #65ccbb 75%, #65ccbb);
+  background: linear-gradient(to bottom right, #8adbcd, #8adbcd 5%, #65ccbb, #65ccbb 25%, #57ba98 25%, #57ba98 75%, #65ccbb 75%, #65ccbb, #8adbcd 5%, #8adbcd);
   min-height: 500px;
   transition: all ease 0.1s;
   /* Create the parallax scrolling effect */
@@ -64,6 +67,9 @@ a.jump-links {
   text-decoration: none;
   color: black; }
 
+.punc {
+  color: #3b945e; }
+
 #home-content {
   color: white;
   position: relative;
@@ -75,12 +81,12 @@ a.jump-links {
 #projects-content {
   color: white;
   position: relative;
-  background: #f7f4ec;
+  background: linear-gradient(to bottom right, #f2ebda, #f2ebda 20%, #f7f4ec 20%, #f7f4ec 80%, #f2ebda 80%, #f2ebda);
   padding: 25px;
   min-height: 50vh;
   box-sizing: border-box; }
   #projects-content .project-details {
-    background-color: #f0f0f0;
+    background-color: #f7f4ec;
     padding: 10px; }
 
 #hobbies-content {
@@ -88,11 +94,11 @@ a.jump-links {
   position: relative;
   padding-bottom: 40px;
   overflow: hidden;
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../resources/images/gcwallpaper.png);
+  background: linear-gradient(to bottom right, #3b945e, #3b945e 25%, #57ba98 25%, #57ba98 75%, #3b945e 75%, #3b945e);
   background-attachment: fixed;
-  background-position: left top;
+  background-position: center;
   background-repeat: no-repeat;
-  background-size: calc(1.2 * 100%); }
+  background-size: cover; }
 
 .social-media-icon:hover {
   transform: scale(1.2);

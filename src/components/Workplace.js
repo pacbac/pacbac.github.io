@@ -35,7 +35,7 @@ const Workplace = ({
                     <img className="workplace-logo" src={logo} width={width} style={{ marginBottom: 5 }} alt={name} />
                     <Typography variant="subtitle1" component="p" style={{ marginBottom: 5 }}>{position}</Typography>
                     <IconButton style={{ padding: 2 }}>
-                        <ExpandMoreIcon style={{ transform: expanded ? 'rotate(180deg)' : '' }} />
+                        <ExpandMoreIcon className={classes.expandMoreIcon2} style={{ transform: expanded ? 'rotate(180deg)' : '' }} />
                     </IconButton>
                 </div>
             </ExpansionPanelSummary>

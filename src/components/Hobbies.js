@@ -10,28 +10,33 @@ import Fab from '@material-ui/core/Fab';
 import Link from '@material-ui/core/Link';
 import MusicNoteIcon from '@material-ui/icons/MusicNote';
 
-import pianoPic from '../resources/images/piano.jpg';
+import pianoPic from '../resources/images/piano.png';
 import meleePic from '../resources/images/melee.jpg';
 import sheetMusicPic from '../resources/images/sheetmusic.png';
 
-const styles = {
+const styles = theme => ({
     card: {
-        maxWidth: '30vw',
+        maxWidth: '25vw',
         margin: 'auto',
         position: 'relative',
         borderRadius: 0,
+        backgroundColor: '#f2f2f2',
     },
     pic: {
         width: '100%',
     },
     fab: {
         margin: 10,
+        backgroundColor: '#3b945e',
+        color: '#f2f2f2',
         '&:hover': {
             transform: 'scale(1.1)',
             transition: 'all ease 0.2s',
+            backgroundColor: '#3b945e',
         }
     },
-};
+    link: theme.link,
+});
 
 class Hobbies extends Component {
     render() {
@@ -50,7 +55,7 @@ class Hobbies extends Component {
                 <Grid container spacing={5}>
                     <Grid item container
                         justify="center"
-                        spacing={5}
+                        spacing={2}
                     >
                         <Grid item>
                             <Card className={classes.card}>
@@ -59,8 +64,7 @@ class Hobbies extends Component {
                                 <CardContent>
                                     <Typography variant="subtitle2">
                                         I have been playing piano since the age of 5, focusing mainly on classical pieces.
-                                        I was classically taught and in early high school, received a distinction in the 
-                                        Grade 8 piano exam from Trinity Guildhall. Afterward, I decided to continue learning and playing on my own.
+                                        I was classically taught and in early high school finished my piano exams with Trinity Guildhall. Afterward, I decided to continue learning and playing on my own.
                                         Nowadays, I play mostly game and anime piano arrangements, although I'm looking to go back
                                         to playing classical music in the near future.
                                     </Typography>
@@ -80,25 +84,26 @@ class Hobbies extends Component {
                                 </CardContent>
                             </Card>
                         </Grid>
+                        <Grid item>  
+                            <Card className={classes.card}>
+                                <CardHeader title="Music Sheets" />
+                                <CardMedia component="img" src={sheetMusicPic} className={classes.pic} />
+                                <CardContent>
+                                    <Typography variant="subtitle2">
+                                        Once in a while, I create and may release an arrangement for a song (particularly anime soundtracks)
+                                        if there aren't sheets available. You can see my public sheets on MuseScore:
+                                    </Typography>
+                                    <Link target="_blank" rel="noopener" href="https://musescore.com/user/28468108" className={classes.link}>
+                                        <Fab variant="extended" aria-label="Delete" className={classes.fab}>
+                                            <MusicNoteIcon />
+                                            My Sheets
+                                        </Fab>
+                                    </Link>
+                                </CardContent>
+                            </Card>
+                        </Grid>
                     </Grid>
-                    <Grid item container justify="center">  
-                        <Card className={classes.card}>
-                            <CardHeader title="Music Sheets" />
-                            <CardMedia component="img" src={sheetMusicPic} className={classes.pic} />
-                            <CardContent>
-                                <Typography variant="subtitle2">
-                                    Once in a while, I create and may release an arrangement for a song (particularly anime soundtracks)
-                                    if there aren't sheets available. You can see my public sheets on MuseScore:
-                                </Typography>
-                                <Link target="_blank" rel="noopener" href="https://musescore.com/user/28468108">
-                                    <Fab variant="extended" aria-label="Delete" className={classes.fab}>
-                                        <MusicNoteIcon />
-                                        My Sheets
-                                    </Fab>
-                                </Link>
-                            </CardContent>
-                        </Card>
-                    </Grid>
+                    
                 </Grid>
             </div>
         );
