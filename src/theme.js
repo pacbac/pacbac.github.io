@@ -6,6 +6,7 @@ export default createMuiTheme({
         fontWeight: 300,
         color: {
             normal: 'white',
+            darkGreen: '#29593b',
             hover: '#3b945e',
         }
     },

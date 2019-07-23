@@ -2,7 +2,12 @@
 
 $sections: 'home', 'projects', 'hobbies';
 $dark-text: rgb(92, 92, 92);
-$dark-text-blue: #1a3057;
+$lightest-green: #8adbcd;
+$light-green: #65ccbb;
+$very-green: #57ba98;
+$yellow-paper: #f2ebda;
+$pale-paper: #f7f4ec;
+
 
 @mixin section($color, $min-height: 50vh, $padding: 25px){
   background: $color;
@@ -24,23 +29,27 @@ html {
 }
 
 .bounce {
-  animation-name: bounce;
-  animation-duration: 1s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+  animation: {
+    name: bounce;
+    duration: 1s;
+    timing-function: linear;
+    iteration-count: infinite;
+  }
 }
 
 .App {
     text-align: center;
-    background: linear-gradient(to bottom right, #8adbcd, #8adbcd 5%, #65ccbb, #65ccbb 25%, #57ba98 25%, #57ba98 75%, #65ccbb 75%, #65ccbb, #8adbcd 5%, #8adbcd);
+    background: linear-gradient(to bottom right, $lightest-green, $lightest-green 5%, $light-green, $light-green 25%, $very-green 25%, $very-green 85%, $light-green 85%, $light-green, $lightest-green 5%, $lightest-green);
     min-height: 500px; 
     transition: all ease 0.1s;
 
     /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: {
+      attachment: fixed;
+      position: center;
+      repeat: no-repeat;
+      size: cover;
+    }
 }
   
 .App-logo {
@@ -114,22 +123,24 @@ a.jump-links {
       @include section(rgb(221, 221, 221), 50vh, 40px);
       color: $dark-text;
     } @else if $section == 'projects' {
-      @include section(linear-gradient(to bottom right, #f2ebda, #f2ebda 20%, #f7f4ec 20%, #f7f4ec 80%, #f2ebda 80%, #f2ebda));
+      @include section(linear-gradient(to bottom left, $yellow-paper, $yellow-paper 22%, $pale-paper 22%, $pale-paper 70%, $yellow-paper 70%, $yellow-paper));
       
       .project-details {
-        background-color: #f7f4ec;
+        background-color: $pale-paper;
         padding: 10px;
       }
       box-sizing: border-box;
     } @else if $section == 'hobbies' {
         padding-bottom: 40px;
         overflow: hidden;
-        background: linear-gradient(to bottom right, #3b945e, #3b945e 25%, #57ba98 25%, #57ba98 75%, #3b945e 75%, #3b945e);
+        background: linear-gradient(to bottom right, #3b945e, #3b945e 25%, $very-green 25%, $very-green 80%, #3b945e 80%, #3b945e);
 
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+        background: {
+          attachment: fixed;
+          position: center;
+          repeat: no-repeat;
+          size: cover;
+        }
     }
   }
 }
@@ -139,4 +150,9 @@ a.jump-links {
       transform: scale(1.2),;
       transition: all ease 0.2s;
   }
+}
+
+footer {
+  background-color: #182628;
+  padding: 20px;
 }

@@ -73,17 +73,16 @@ const styles = theme => ({
         margin: 0,
     },
     cardHeader: {
-        color: theme.typography.color.hover,
+        color: theme.typography.color.darkGreen,
     },
     cardContent: {
         padding: '16px 0',
-        color: theme.typography.color.hover,
         '&:last-child': {
             padding: 0,
         },
     },
     divider: {
-        backgroundColor: '#8adbcd',
+        backgroundColor: theme.typography.color.hover,
         margin: 'auto 20px',
     },
     pic: {
@@ -128,6 +127,7 @@ const styles = theme => ({
         borderBottom: 'solid #3b945e 3px',
         display: 'table',
         padding: 10,
+        userSelect: 'none',
     }
 });
 
@@ -191,7 +191,7 @@ class Home extends Component {
                     >HI! I'M CLAYTON<span className="punc">.</span></Typography>
                 </Grow>
                 <a href="#about-me">
-                    <ExpandMoreIcon className="bounce" className={classes.expandMoreIcon} />
+                    <ExpandMoreIcon className={"bounce " + classes.expandMoreIcon} />
                 </a>
                 <Grid
                     className={classes.grid}
@@ -204,7 +204,7 @@ class Home extends Component {
                             <Card className={classes.card}>
                                 <a className="jump-links">
                                     <CardHeader
-                                        classes={{ root: classes.cardHeader}}
+                                        classes={{ root: classes.cardHeader }}
                                         id="about-me"
                                         title="A Little About Me" 
                                         subheader="UCLA CS student + aspiring software engineer"

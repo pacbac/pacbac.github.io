@@ -71,19 +71,6 @@ class Hobbies extends Component {
                                 </CardContent>
                             </Card>
                         </Grid>
-                        <Grid item>
-                            <Card className={classes.card}>
-                                <CardHeader title="Super Smash Bros. (Melee)" />
-                                <CardMedia component="img" src={meleePic} className={classes.pic} />
-                                <CardContent>
-                                    <Typography variant="subtitle2">
-                                        I enjoy playing Smash with friends as a way to relax and have fun.
-                                        I've been a huge fan of the game and the Smash series in general since 2014, and
-                                        follow the competitive Melee scene actively.
-                                    </Typography>
-                                </CardContent>
-                            </Card>
-                        </Grid>
                         <Grid item>  
                             <Card className={classes.card}>
                                 <CardHeader title="Music Sheets" />
@@ -103,7 +90,19 @@ class Hobbies extends Component {
                             </Card>
                         </Grid>
                     </Grid>
-                    
+                    <Grid item container justify="center">
+                        <Card className={classes.card}>
+                            <CardHeader title="Super Smash Bros. (Melee)" />
+                            <CardMedia component="img" src={meleePic} className={classes.pic} />
+                            <CardContent>
+                                <Typography variant="subtitle2">
+                                    I enjoy playing Smash with friends as a way to relax and have fun.
+                                    I've been a huge fan of the game and the Smash series in general since 2014, and
+                                    follow the competitive Melee scene actively.
+                                </Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
                 </Grid>
             </div>
         );

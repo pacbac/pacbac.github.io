@@ -144,15 +144,6 @@ class Projects extends Component {
                     className={classes.title}
                 >Personal Projects</Typography>
                 <Grid container spacing={2}>
-                    <Grid item container justify="center">
-                        <ProjectEntry classes={classes} {...{
-                            title: "This website!",
-                            details: "",
-                            technologies: ["React", "Material-UI"],
-                            link: "https://github.com/pacbac/pacbac.github.io",
-                            period: "Jul 2019",
-                        }} />
-                    </Grid>
                     <Grid item container justify="center" spacing={2}>
                         {leftColProjects.map(project => (
                             <ProjectEntry
