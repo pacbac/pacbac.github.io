@@ -25,9 +25,10 @@ const styles = {
             transition: 'all ease 0.2s',
         },
     },
-    headerColorPrimary: {
+    header: {
         backgroundColor: 'transparent',
         boxShadow: '0 0 0',
+        height: 70,
     }
 };
 
@@ -43,10 +44,10 @@ const GithubIcon = ({ color }) => (
     </Link>
 );
 
-const HeaderLayer = ({ classes: { nameRoot, buttonRoot, headerColorPrimary }, appBarFontColor }) => {
+const HeaderLayer = ({ classes: { nameRoot, buttonRoot, header }, appBarFontColor }) => {
     const buttonStyle = { backgroundColor: 'transparent'};
     return (
-        <AppBar position="sticky" className="App-header" color="primary" classes={{ colorPrimary: headerColorPrimary }}>
+        <AppBar position="sticky" className="App-header" color="primary" classes={{ root: header }}>
             <Toolbar>
                 <Grid container
                     justify="space-between"

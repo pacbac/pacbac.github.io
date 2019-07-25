@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
-import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
+import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Grow from '@material-ui/core/Grow';
 
+import SectionsBar from './SectionsBar';
 import Workplace from './Workplace';
 import Education from './Education';
 import profilePic from '../resources/images/profilepic.jpg';
@@ -70,10 +70,11 @@ const styles = theme => ({
         borderRadius: 0,
         maxWidth: '30vw',
         overflow: 'visible',
-        margin: 0,
+        margin: 'auto',
     },
     cardHeader: {
         color: theme.typography.color.darkGreen,
+        marginBottom: 15,
     },
     cardContent: {
         padding: '16px 0',
@@ -86,7 +87,8 @@ const styles = theme => ({
         margin: 'auto 20px',
     },
     pic: {
-        width: '100%',
+        maxWidth: 400,
+        maxHeight: 400,
     },
     expansionPanel: {
         boxShadow: '0 0 0',
@@ -122,12 +124,22 @@ const styles = theme => ({
     title: {
         color: 'white',
         fontWeight: 500,
-        margin: `${Home.TITLE_MARGIN}vh auto auto auto`,
+        margin: `calc(40vh - 80px) auto calc(28vh - 80px) auto`,
+        transform: 'translateY(-50%)',
         transition: '0.2s',
         borderBottom: 'solid #3b945e 3px',
         display: 'table',
         padding: 10,
         userSelect: 'none',
+    },
+    aboutMe: {
+        display: 'flex',
+        justifyContent: 'center',
+        padding: 40,
+        borderRadius: 0,
+        maxWidth: '50vw',
+        maxHeight: 'calc(100% - 40px)',
+        margin: 'auto',
     }
 });
 
@@ -184,70 +196,39 @@ class Home extends Component {
         const { openPanel, delayGrow } = this.state;
         return (
             <div className="home-content">
-                <Grow in>
-                    <Typography
-                        variant="h2"
-                        className={classes.title}
-                    >HI! I'M CLAYTON<span className="punc">.</span></Typography>
-                </Grow>
-                <a href="#about-me">
-                    <ExpandMoreIcon className={"bounce " + classes.expandMoreIcon} />
-                </a>
-                <Grid
-                    className={classes.grid}
-                    container
-                    justify="center"
-                    spacing={2}
-                >
-                    <Grid item>
-                        <Grow in={delayGrow.about}>
-                            <Card className={classes.card}>
-                                <a className="jump-links">
-                                    <CardHeader
-                                        classes={{ root: classes.cardHeader }}
-                                        id="about-me"
-                                        title="A Little About Me" 
-                                        subheader="UCLA CS student + aspiring software engineer"
-                                    />
-                                </a>
-                                <CardMedia component="img" src={profilePic} className={classes.pic} />
-                                <CardContent>
-                                    <Typography variant="body1" component="p">
-                                        I am a UCLA student pursuing a Bachelors in computer science.
-                                        My primary interests are in software engineering 
-                                        and mathematical modeling, with machine learning and 
-                                        other applied mathematical topics as secondary interests.
-                                    </Typography>
-                                </CardContent>
-                            </Card>
-                        </Grow>             
-                    </Grid>
-                    <Grid item>
-                        <Grow in={delayGrow.work}>
-                            <Card className={classes.card}>
-                                <a className="jump-links">
-                                    <CardHeader
-                                        title="Where I've Worked"
-                                        subheader="Places I've Contributed My Skills To"
-                                    />
-                                </a>
-                                <CardContent className={classes.cardContent}>
-                                    <div className="home-workplaces">
-                                        {Object.keys(NAME_LOGO_MAP).map((workplace, i) => (
-                                            <Workplace 
-                                                index={i}
-                                                expanded={openPanel === i}
-                                                handlePanelChange={this.handlePanelChange}
-                                                classes={classes}
-                                                {...NAME_LOGO_MAP[workplace]}
-                                            />))}
-                                    </div>
-                                </CardContent>
-                            </Card>
-                        </Grow>
-                    </Grid>
-                </Grid>
-                <Education classes={classes} delayGrow={delayGrow} />
+                <div id="cover-content">
+                    <Grow in>
+                        <Typography
+                            variant="h2"
+                            className={classes.title}
+                        >HI! I'M CLAYTON<span className="punc">.</span></Typography>
+                    </Grow>
+                    <a href="#about-me-content">
+                        <ExpandMoreIcon className={"bounce " + classes.expandMoreIcon} />
+                    </a>
+                    <SectionsBar />
+                </div>
+                <div id="about-me-content">
+                    <Paper className={classes.aboutMe}>
+                        <img src={profilePic} className={classes.pic} />
+                        <div className="about-me">
+                            <a className="jump-links">
+                                <Typography variant="h4"
+                                    classes={{ root: classes.cardHeader }}
+                                    id="about-me"
+                                >A Little About Me</Typography>
+                            </a>
+                            <Typography variant="body1" component="p" style={{ marginBottom: 15 }}>
+                                I am a UCLA student pursuing a Bachelors in computer science.
+                                My primary interests are in software engineering 
+                                and mathematical modeling, with machine learning and 
+                                other applied mathematical topics as secondary interests.
+                            </Typography>
+                            <Education classes={classes} delayGrow={delayGrow} />
+                        </div>
+                    </Paper>
+                </div>
+                
             </div>  
         );
     }
