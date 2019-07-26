@@ -25,32 +25,16 @@ html {
   background-repeat: no-repeat;
   background-size: cover; }
 
-.App-logo {
-  height: 20vmin;
-  margin-bottom: 15px;
-  border-radius: 20%;
-  border-style: solid;
-  border-color: #e4e3e3;
-  border-width: 3px; }
-
-.App-header {
-  color: white; }
-  .App-header__icon {
-    top: 5px; }
-
-.App-link {
-  color: #61dafb; }
-
 div.sections-bar {
   display: flex;
-  padding-left: 8%;
+  padding-left: 5%;
   position: absolute;
   overflow: hidden;
   bottom: 0; }
   div.sections-bar > a {
     text-decoration: none; }
     div.sections-bar > a > div.sections-content {
-      background-color: #29593b;
+      background-color: rgba(41, 89, 59, 0.5);
       color: white;
       max-width: 10vw;
       flex-grow: 1;
@@ -109,8 +93,26 @@ a.jump-links {
   color: white;
   position: relative;
   width: 100%;
-  background-color: #dbd1caf3;
-  position: 'relative'; }
+  background-color: #dbd1caf3; }
+
+#workplaces-content {
+  color: white;
+  position: relative;
+  background-color: #f0f0f0;
+  overflow: auto;
+  padding-bottom: 50px; }
+  #workplaces-content .timeline {
+    position: relative;
+    min-height: 500px;
+    overflow: auto; }
+    #workplaces-content .timeline::before {
+      content: '';
+      height: 100%;
+      width: 4px;
+      left: 50%;
+      transform: translateX(-50%);
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0.5); }
 
 #projects-content {
   color: white;

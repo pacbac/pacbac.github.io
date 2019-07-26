@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,700');
 
 $APP-BAR-HEIGHT: 70px;
-$sections: 'home', 'cover', 'about-me', 'projects', 'hobbies';
+$sections: 'home', 'cover', 'about-me', 'workplaces', 'projects', 'hobbies';
 $dark-text: rgb(92, 92, 92);
 $lightest-green: #8adbcd;
 $light-green: #65ccbb;
@@ -53,33 +53,10 @@ html {
       size: cover;
     }
 }
-  
-.App-logo {
-  height: 20vmin;
-  margin-bottom: 15px;
-  border: {
-    radius: 20%;
-    style: solid;
-    color: rgb(228, 227, 227);
-    width: 3px;
-  }
-}
-
-.App-header {
-  color: white;
-
-  &__icon {
-    top: 5px;
-  }
-}
-
-.App-link {
-  color: #61dafb;
-}
 
 div.sections-bar {
   display: flex;
-  padding-left: 8%;
+  padding-left: 5%;
   position: absolute;
   overflow: hidden;
   bottom: 0;
@@ -88,7 +65,7 @@ div.sections-bar {
     text-decoration: none;
 
     > div.sections-content {
-      background-color: $dark-green;
+      background-color: rgba($dark-green, 0.5);
       color: white;
       max-width: 10vw;
       flex-grow: 1;
@@ -155,11 +132,32 @@ a.jump-links {
     @if $section == 'about-me' {
       width: 100%;
       background-color: #dbd1caf3;
-      position: 'relative';
     
     } @else if $section == 'cover' {
       height: calc(100vh - #{$APP-BAR-HEIGHT});
       overflow: auto;
+    
+    } @else if $section == 'workplaces' {
+      background-color: #f0f0f0;
+      overflow: auto;
+      padding-bottom: 50px;
+
+      .timeline {
+        position: relative;
+        min-height: 500px;
+        overflow: auto;
+
+        &::before {
+          content: '';
+          height: 100%;
+          width: 4px;
+          left: 50%;
+          transform: translateX(-50%);
+          position: absolute;
+          background-color: rgba(black, 0.5);
+        }
+      }
+      
 
     } @else if $section == 'projects' {
       @include section(linear-gradient(to bottom left, $yellow-paper, $yellow-paper 22%, $pale-paper 22%, $pale-paper 70%, $yellow-paper 70%, $yellow-paper));
@@ -180,7 +178,7 @@ a.jump-links {
           repeat: no-repeat;
           size: cover;
         }
-    }
+      }
   }
 }
 

@@ -7,6 +7,11 @@ const SectionsBar = () => (
                 About Me
             </div>
         </a>
+        <a href="#workplaces-content">
+            <div className="sections-content">
+                Work Experience
+            </div>
+        </a>
         <a href="#projects-content">
             <div className="sections-content">
                 Personal Projects
