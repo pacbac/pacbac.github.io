@@ -21,7 +21,7 @@ const Workplace = ({
 }) => {
     const [expanded, setExpanded] = useState(false);
     return (
-        <div style={{ position: 'relative'}}>
+        <div style={{ position: 'relative' }}>
         <ExpansionPanel
                 className={classNames(
                     classes.timelineCard, {

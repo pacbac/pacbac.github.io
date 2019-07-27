@@ -7,7 +7,7 @@ import throttle from 'lodash.throttle';
 import './css/App.css';
 import HeaderLayer from './components/HeaderLayer';
 import Home from './components/Home';
-import Projects from './components/Projects';
+import Projects from './components/projects';
 import Hobbies from './components/Hobbies';
 
 const styles = {

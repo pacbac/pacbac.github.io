@@ -6,7 +6,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Grow from '@material-ui/core/Grow';
 
 import SectionsBar from './SectionsBar';
-import Workplaces from './Workplaces';
+import Workplaces from './workplaces';
 import Education from './Education';
 import profilePic from '../resources/images/profilepic.jpg';
 
