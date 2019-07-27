@@ -5,8 +5,6 @@ import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
-import handleViewport from 'react-in-viewport';
-import throttle from 'lodash.throttle';
 import Link from '@material-ui/core/Link';
 
 import PROJECT_MAP from './projects.json';
@@ -59,40 +57,7 @@ const ProjectEntry = ({
     </Grid>
 );
 
-const ViewportProjectEntry = handleViewport(ProjectEntry);
-
 class Projects extends Component {
-
-    static COLOR_CHANGE_MARGIN = 30; // give some flexibility for the app bar color to change
-    static THROTTLE_DELAY = 200;
-
-    constructor(props) {
-        super(props);
-        this.container = React.createRef();
-        this.throttleChangeFontColor = throttle(this.shouldChangeFontColor, Projects.THROTTLE_DELAY);
-    }
-
-    shouldChangeFontColor = () => {
-        const { offsetTop, offsetHeight } = this.container.current;
-        const { appBarFontColor } = this.props;
-        if (window.scrollY + Projects.COLOR_CHANGE_MARGIN > offsetTop
-            && window.scrollY + Projects.COLOR_CHANGE_MARGIN < offsetTop + offsetHeight) {
-                if(appBarFontColor !== 'black') {
-                    this.props.changeAppBarFontColor('black');
-                }
-        } else if (appBarFontColor !== 'white') {
-            this.props.changeAppBarFontColor('white');
-        }
-    }
-
-    componentDidMount() {
-        document.addEventListener("scroll", this.throttleChangeFontColor);
-    }
-
-    componentWillUnMount() {
-        document.removeEventListener("scroll", this.throttleChangeFontColor);
-    }
-
     render() {
         const { classes } = this.props;
         const leftColProjects = [];
@@ -113,17 +78,10 @@ class Projects extends Component {
                 >Personal Projects</Typography>
                 <Grid container spacing={2}>
                     <Grid item container justify="center" spacing={2}>
-                        {leftColProjects.map(project => (
-                            <ProjectEntry
-                                classes={classes}
-                                {...project}
-                            />
-                        ))}
+                        {leftColProjects.map(project => <ProjectEntry classes={classes} {...project} />)}
                     </Grid>
                     <Grid item container justify="center" spacing={2}>
-                        {rightColProjects.map(project => (
-                            <ViewportProjectEntry classes={classes} {...project} onEnterViewport={() => console.log('hello')} />
-                        ))}
+                        {rightColProjects.map(project => <ProjectEntry classes={classes} {...project} />)}
                     </Grid>
                 </Grid>
             </div>

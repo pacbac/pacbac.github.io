@@ -23,6 +23,7 @@ const styles = theme => ({
         margin: '50px 0',
         width: 70,
         height: 70,
+        transition: 'color ease 0.2s',
         '&:hover': {
             color: theme.typography.color.hover,
         }
@@ -54,6 +55,8 @@ const styles = theme => ({
 class Home extends Component {
 
     static TITLE_MARGIN = 12; // vh
+    static COLOR_CHANGE_MARGIN = 30; // give some flexibility for the app bar color to change
+    static THROTTLE_DELAY = 200;
 
     constructor(props) {
         super(props);
@@ -91,7 +94,7 @@ class Home extends Component {
 
     render() {
         const { classes } = this.props;
-        const { openPanel, delayGrow } = this.state;
+        const { delayGrow } = this.state;
         return (
             <div className="home-content">
                 <div id="cover-content">
@@ -106,7 +109,7 @@ class Home extends Component {
                     </a>
                     <SectionsBar />
                 </div>
-                <div id="about-me-content">
+                <div id="about-me-content" ref={this.props.container}>
                     <Paper className={classes.aboutMe}>
                         <img src={profilePic} className={classes.pic} />
                         <div className="about-me">

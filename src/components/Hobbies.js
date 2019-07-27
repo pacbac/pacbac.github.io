@@ -21,6 +21,7 @@ const styles = theme => ({
         position: 'relative',
         borderRadius: 0,
         backgroundColor: '#f2f2f2',
+        height: '100%',
     },
     pic: {
         width: '100%',
@@ -36,6 +37,11 @@ const styles = theme => ({
         }
     },
     link: theme.link,
+    gridChild: {
+        display: 'flex',
+        alignItems: 'stretch', // make all cards same size
+        position: 'relative',
+    }
 });
 
 class Hobbies extends Component {
@@ -46,51 +52,50 @@ class Hobbies extends Component {
                 <Typography
                     variant="h2"
                     style={{
-                        color: 'white',
+                        color: 'black',
                         fontWeight: 500,
                         margin: '6vw 0',
                         transition: '0.2s',
                     }}
                 >In My Free Time...</Typography>
-                <Grid container spacing={5}>
-                    <Grid item container
-                        justify="center"
-                        spacing={2}
-                    >
-                        <Grid item>
-                            <Card className={classes.card}>
-                                <CardHeader title="Piano" />
-                                <CardMedia component="img" src={pianoPic} className={classes.pic} />
-                                <CardContent>
-                                    <Typography variant="subtitle2">
-                                        I have been playing piano since the age of 5, focusing mainly on classical pieces.
-                                        I was classically taught and in early high school finished my piano exams with Trinity Guildhall. Afterward, I decided to continue learning and playing on my own.
-                                        Nowadays, I play mostly game and anime piano arrangements, although I'm looking to go back
-                                        to playing classical music in the near future.
-                                    </Typography>
-                                </CardContent>
-                            </Card>
-                        </Grid>
-                        <Grid item>  
-                            <Card className={classes.card}>
-                                <CardHeader title="Music Sheets" />
-                                <CardMedia component="img" src={sheetMusicPic} className={classes.pic} />
-                                <CardContent>
-                                    <Typography variant="subtitle2">
-                                        Once in a while, I create and may release an arrangement for a song (particularly anime soundtracks)
-                                        if there aren't sheets available. You can see my public sheets on MuseScore:
-                                    </Typography>
-                                    <Link target="_blank" rel="noopener" href="https://musescore.com/user/28468108" className={classes.link}>
-                                        <Fab variant="extended" aria-label="Delete" className={classes.fab}>
-                                            <MusicNoteIcon />
-                                            My Sheets
-                                        </Fab>
-                                    </Link>
-                                </CardContent>
-                            </Card>
-                        </Grid>
+                <Grid item container
+                    justify="center"
+                    spacing={2}
+                    className={classes.gridParent}
+                >
+                    <Grid item>
+                        <Card className={classes.card}>
+                            <CardHeader title="Piano" />
+                            <CardMedia component="img" src={pianoPic} className={classes.pic} />
+                            <CardContent>
+                                <Typography variant="subtitle2">
+                                    I have been playing piano since the age of 5, focusing mainly on classical pieces.
+                                    I was classically taught and in early high school finished my piano exams with Trinity Guildhall. Afterward, I decided to continue learning and playing on my own.
+                                    Nowadays, I play mostly game and anime piano arrangements, although I'm looking to go back
+                                    to playing classical music in the near future.
+                                </Typography>
+                            </CardContent>
+                        </Card>
                     </Grid>
-                    <Grid item container justify="center">
+                    <Grid item className={classes.gridChild}>  
+                        <Card className={classes.card}>
+                            <CardHeader title="Music Sheets" />
+                            <CardMedia component="img" src={sheetMusicPic} className={classes.pic} />
+                            <CardContent>
+                                <Typography variant="subtitle2">
+                                    Once in a while, I create and may release an arrangement for a song (particularly anime soundtracks)
+                                    if there aren't sheets available. You can see my public sheets on MuseScore:
+                                </Typography>
+                                <Link target="_blank" rel="noopener" href="https://musescore.com/user/28468108" className={classes.link}>
+                                    <Fab variant="extended" aria-label="Delete" className={classes.fab}>
+                                        <MusicNoteIcon />
+                                        My Sheets
+                                    </Fab>
+                                </Link>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item>
                         <Card className={classes.card}>
                             <CardHeader title="Super Smash Bros. (Melee)" />
                             <CardMedia component="img" src={meleePic} className={classes.pic} />

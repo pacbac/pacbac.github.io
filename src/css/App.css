@@ -51,7 +51,10 @@ div.sections-bar {
       margin-right: 5px;
       height: 100%;
       border-top-left-radius: 3px;
-      border-top-right-radius: 3px; }
+      border-top-right-radius: 3px;
+      transition: background-color ease 0.2s; }
+      div.sections-bar > a > div.sections-content:hover {
+        background-color: rgba(70, 145, 98, 0.5); }
 
 .about-me {
   max-width: 400px;
@@ -146,7 +149,7 @@ a.jump-links {
   position: relative;
   padding-bottom: 40px;
   overflow: hidden;
-  background: linear-gradient(to bottom right, #b5dfb5, #b5dfb5 18%, #dbf1db 18%, #dbf1db 88%, #b5dfb5 88%, #b5dfb5); }
+  background: linear-gradient(to bottom right, #dbf1db, #dbf1db 10%, #b5dfb5 10%, #b5dfb5 30%, #dbf1db 30%, #dbf1db 70%, #b5dfb5 70%, #b5dfb5, 90%, #dbf1db 90%, #dbf1db); }
 
 .social-media-icon:hover {
   transform: scale(1.2);
