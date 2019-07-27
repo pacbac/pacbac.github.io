@@ -12,12 +12,11 @@ import profilePic from '../resources/images/profilepic.jpg';
 
 const styles = theme => ({
     aboutMeHeader: {
-        color: theme.typography.color.darkGreen,
         marginBottom: 15,
     },
     pic: {
-        maxWidth: 400,
-        maxHeight: 400,
+        width: 400,
+        height: 400,
     },
     expandMoreIcon: {
         color: 'white',
@@ -42,11 +41,13 @@ const styles = theme => ({
     aboutMe: {
         display: 'flex',
         justifyContent: 'center',
-        padding: 40,
         borderRadius: 0,
         maxWidth: '50vw',
         maxHeight: 'calc(100% - 40px)',
         margin: 'auto',
+        position: 'relative',
+        padding: 40,
+        backgroundColor: '#f2f2f2',
     }
 });
 
@@ -87,15 +88,6 @@ class Home extends Component {
             this.growOnDelay('edu');
         }
     }
-
-    /**
-     * Restriction: we only allow one work experience to be expanded at a time (to prevent the card from being too long)
-     * If the current panel open is equal to the the one being "changed" (being clicked), it means to close the panel
-     * If the user clicked on a different panel, though, expand that one instead
-     * 
-     * @param i the workplace component's index (in the list of work experiences)
-     */
-    handlePanelChange = i => this.setState(({ openPanel }) => ({ openPanel: openPanel === i ? -1 : i }));
 
     render() {
         const { classes } = this.props;

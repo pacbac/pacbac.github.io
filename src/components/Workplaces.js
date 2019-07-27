@@ -32,7 +32,6 @@ const styles = theme => ({
         },
     },
     expansionPanel: {
-        boxShadow: '0 0 0',
         transition: 'all ease 0.1s',
         paddingTop: 16,
     },
@@ -41,7 +40,7 @@ const styles = theme => ({
         display: 'block',
     },
     expansionPanelDetails: {
-        backgroundColor: '#d5ebe7',
+        backgroundColor: 'rgba(0,0,0,0.12)',
         display: 'block',
     },
     expandMoreIcon2: {
@@ -115,6 +114,10 @@ const styles = theme => ({
         position: 'absolute',
         top: 0,
         left: '50%',
+        backgroundColor: 'white',
+        padding: 8,
+        boxShadow: '1px 1px 2px rgba(0,0,0,0.2)',
+        borderRadius: 8,
     },
     timePeriodLeft: {
         transform: `translate(30px, calc(-25% + ${1.5*ARROW_THICKNESS}px))`
@@ -125,8 +128,8 @@ const styles = theme => ({
     pastIcon: {
         backgroundColor: 'black',
         borderRadius: '100%',
-        width: TIMELINE_EDGE_ICON_DIM,
-        height: TIMELINE_EDGE_ICON_DIM,
+        width: 0.7*TIMELINE_EDGE_ICON_DIM,
+        height: 0.7*TIMELINE_EDGE_ICON_DIM,
     },
 });
 

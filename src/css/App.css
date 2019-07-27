@@ -27,13 +27,21 @@ html {
 
 div.sections-bar {
   display: flex;
-  padding-left: 5%;
   position: absolute;
   overflow: hidden;
-  bottom: 0; }
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 50px;
+  border-bottom-style: solid;
+  border-bottom-color: white;
+  border-bottom-width: 3px; }
   div.sections-bar > a {
     text-decoration: none; }
     div.sections-bar > a > div.sections-content {
+      border-top-style: solid;
+      border-top-width: 1px;
+      border-top-color: white;
       background-color: rgba(41, 89, 59, 0.5);
       color: white;
       max-width: 10vw;
@@ -41,7 +49,9 @@ div.sections-bar {
       padding: 13px;
       font-family: Poppins;
       margin-right: 5px;
-      height: 100%; }
+      height: 100%;
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px; }
 
 .about-me {
   max-width: 400px;
@@ -93,12 +103,18 @@ a.jump-links {
   color: white;
   position: relative;
   width: 100%;
-  background-color: #dbd1caf3; }
+  background: radial-gradient(ellipse at bottom left, #f7f4ec, #f7f4ec 50%, #f2ebda 50%, #f2ebda 71%, transparent 71%, transparent), linear-gradient(to bottom, transparent, transparent 25%, #f7f4ec 25%, #f7f4ec);
+  padding: 40px;
+  margin-top: 80px;
+  box-sizing: border-box; }
 
 #workplaces-content {
   color: white;
   position: relative;
-  background-color: #f0f0f0;
+  background: linear-gradient(120deg, lightgray, lightgray 18%, transparent 18%, whitesmoke 50%, transparent 88%, lightgray 88%, lightgray);
+  padding: 25px;
+  min-height: 50vh;
+  background-color: #e2e2e2;
   overflow: auto;
   padding-bottom: 50px; }
   #workplaces-content .timeline {
@@ -117,7 +133,7 @@ a.jump-links {
 #projects-content {
   color: white;
   position: relative;
-  background: linear-gradient(to bottom left, #f2ebda, #f2ebda 22%, #f7f4ec 22%, #f7f4ec 70%, #f2ebda 70%, #f2ebda);
+  background: linear-gradient(to bottom left, #f2ebda, #f2ebda 22%, transparent 22%, transparent 70%, #f2ebda 70%, #f2ebda), linear-gradient(to bottom right, #f5edde, #f5edde 10%, #f7f4ec 10%, #f7f4ec 90%, #f5edde 90%, #f5edde);
   padding: 25px;
   min-height: 50vh;
   box-sizing: border-box; }
@@ -130,11 +146,7 @@ a.jump-links {
   position: relative;
   padding-bottom: 40px;
   overflow: hidden;
-  background: linear-gradient(to bottom right, #3b945e, #3b945e 25%, #57ba98 25%, #57ba98 80%, #3b945e 80%, #3b945e);
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; }
+  background: linear-gradient(to bottom right, #b5dfb5, #b5dfb5 18%, #dbf1db 18%, #dbf1db 88%, #b5dfb5 88%, #b5dfb5); }
 
 .social-media-icon:hover {
   transform: scale(1.2);

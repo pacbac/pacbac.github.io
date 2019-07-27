@@ -8,6 +8,7 @@ $light-green: #65ccbb;
 $very-green: #57ba98;
 $dark-green: #29593b;
 $yellow-paper: #f2ebda;
+$semi-pale-paper: #f5edde;
 $pale-paper: #f7f4ec;
 
 
@@ -56,15 +57,27 @@ html {
 
 div.sections-bar {
   display: flex;
-  padding-left: 5%;
   position: absolute;
   overflow: hidden;
   bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 50px;
+  border-bottom: {
+    style: solid;
+    color: white;
+    width: 3px;
+  }
 
   > a {
     text-decoration: none;
 
     > div.sections-content {
+      border-top: {
+        style: solid;
+        width: 1px;
+        color: white;
+      }
       background-color: rgba($dark-green, 0.5);
       color: white;
       max-width: 10vw;
@@ -73,6 +86,10 @@ div.sections-bar {
       font-family: Poppins;
       margin-right: 5px;
       height: 100%;
+      border: {
+        top-left-radius: 3px;
+        top-right-radius: 3px;
+      }
     }
   }
 }
@@ -131,14 +148,24 @@ a.jump-links {
 
     @if $section == 'about-me' {
       width: 100%;
-      background-color: #dbd1caf3;
+      background: 
+        radial-gradient(ellipse at bottom left, #f7f4ec, #f7f4ec 50%, #f2ebda 50%, #f2ebda 71%, transparent 71%, transparent),
+        linear-gradient(to bottom, transparent, transparent 25%, #f7f4ec 25%, #f7f4ec);
+      padding: 40px;
+      margin-top: 80px;
+      box-sizing: border-box;
     
     } @else if $section == 'cover' {
       height: calc(100vh - #{$APP-BAR-HEIGHT});
       overflow: auto;
     
     } @else if $section == 'workplaces' {
-      background-color: #f0f0f0;
+      $corner-color: lightgray;
+      $main-color: transparent;
+      $central-color: whitesmoke;
+      
+      @include section(linear-gradient(120deg, $corner-color, $corner-color 18%, $main-color 18%, $central-color 50%, $main-color 88%, $corner-color 88%, $corner-color));
+      background-color: #e2e2e2;
       overflow: auto;
       padding-bottom: 50px;
 
@@ -160,24 +187,25 @@ a.jump-links {
       
 
     } @else if $section == 'projects' {
-      @include section(linear-gradient(to bottom left, $yellow-paper, $yellow-paper 22%, $pale-paper 22%, $pale-paper 70%, $yellow-paper 70%, $yellow-paper));
+      background:
+        linear-gradient(to bottom left, $yellow-paper, $yellow-paper 22%, transparent 22%, transparent 70%, $yellow-paper 70%, $yellow-paper),
+        linear-gradient(to bottom right, $semi-pale-paper, $semi-pale-paper 10%, $pale-paper 10%, $pale-paper 90%, $semi-pale-paper 90%, $semi-pale-paper);
       
+      padding: 25px;
+      min-height: 50vh;
+
       .project-details {
         background-color: $pale-paper;
         padding: 10px;
       }
       box-sizing: border-box;
     } @else if $section == 'hobbies' {
+        $corner-color: #b5dfb5;
+        $main-color: rgb(219, 241, 219);
+
         padding-bottom: 40px;
         overflow: hidden;
-        background: linear-gradient(to bottom right, #3b945e, #3b945e 25%, $very-green 25%, $very-green 80%, #3b945e 80%, #3b945e);
-
-        background: {
-          attachment: fixed;
-          position: center;
-          repeat: no-repeat;
-          size: cover;
-        }
+        background: linear-gradient(to bottom right, $corner-color, $corner-color 18%, $main-color 18%, $main-color 88%, $corner-color 88%, $corner-color);
       }
   }
 }

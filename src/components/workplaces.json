@@ -24,7 +24,7 @@
         "name": "US Census Bureau",
         "position": "Software Development Intern",
         "period": "Summer 2018",
-        "location": "Greater Washington DC Area",
+        "location": "Washington, DC",
         "link": "http://census.gov",
         "technologies": ["HTML", "CSS", "jQuery", "Java", "SAS"],
         "details": "At the Census, I worked with a team of ~20 analysts and developers to develop and maintain an internal website used to store data and extract statistics from the Commodity Flow Survey. I also helped to clean the data used for their shipment calculation software, improving the accuracy of its results.",
