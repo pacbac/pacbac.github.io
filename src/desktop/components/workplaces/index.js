@@ -6,10 +6,10 @@ import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 
 import Workplace from './Workplace';
 import NAME_LOGO_MAP from './workplaces.json';
-import houzzLogo from '../../resources/images/houzz.png';
-import girsLogo from '../../resources/images/girs.png';
-import censusLogo from '../../resources/images/census.png';
-import jhuaplLogo from '../../resources/images/jhuapl.png';
+import houzzLogo from '../../../resources/images/houzz.png';
+import girsLogo from '../../../resources/images/girs.png';
+import censusLogo from '../../../resources/images/census.png';
+import jhuaplLogo from '../../../resources/images/jhuapl.png';
 
 const CARD_WIDTH = 30; // vw
 const CARD_MARGIN_TOP = 30; // px

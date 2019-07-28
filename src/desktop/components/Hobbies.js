@@ -10,9 +10,9 @@ import Fab from '@material-ui/core/Fab';
 import Link from '@material-ui/core/Link';
 import MusicNoteIcon from '@material-ui/icons/MusicNote';
 
-import pianoPic from '../resources/images/piano.png';
-import meleePic from '../resources/images/melee.jpg';
-import sheetMusicPic from '../resources/images/sheetmusic.png';
+import pianoPic from '../../resources/images/piano.png';
+import meleePic from '../../resources/images/melee.jpg';
+import sheetMusicPic from '../../resources/images/sheetmusic.png';
 
 const styles = theme => ({
     card: {

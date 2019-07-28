@@ -8,7 +8,7 @@ import Grow from '@material-ui/core/Grow';
 import SectionsBar from './SectionsBar';
 import Workplaces from './workplaces';
 import Education from './Education';
-import profilePic from '../resources/images/profilepic.jpg';
+import profilePic from '../../resources/images/profilepic.jpg';
 
 const styles = theme => ({
     aboutMeHeader: {

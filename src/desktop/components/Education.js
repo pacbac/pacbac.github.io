@@ -5,7 +5,7 @@ import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 
-import uclaPic from '../resources/images/uclaeng.png';
+import uclaPic from '../../resources/images/uclaeng.png';
 
 
 const Education = ({ delayGrow, classes }) => (

@@ -7,10 +7,10 @@ import Toolbar from '@material-ui/core/Toolbar';
 import EmailIcon from '@material-ui/icons/Email';
 import Link from '@material-ui/core/Link';
 
-import linkedinWhiteIcon from '../resources/icons/linkedinwhite.png';
-import githubWhiteIcon from '../resources/icons/githubwhite.png';
-import linkedinBlackIcon from '../resources/icons/linkedinblack.png';
-import githubBlackIcon from '../resources/icons/githubblack.png';
+import linkedinWhiteIcon from '../../resources/icons/linkedinwhite.png';
+import githubWhiteIcon from '../../resources/icons/githubwhite.png';
+import linkedinBlackIcon from '../../resources/icons/linkedinblack.png';
+import githubBlackIcon from '../../resources/icons/githubblack.png';
 
 const styles = {
     nameRoot: {
