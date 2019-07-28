@@ -6,7 +6,6 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Grow from '@material-ui/core/Grow';
 
 import SectionsBar from './SectionsBar';
-import Workplaces from './workplaces';
 import Education from './Education';
 import profilePic from '../../resources/images/profilepic.jpg';
 
@@ -15,8 +14,7 @@ const styles = theme => ({
         marginBottom: 15,
     },
     pic: {
-        width: 400,
-        height: 400,
+        width: '100%',
     },
     expandMoreIcon: {
         color: 'white',
@@ -40,14 +38,11 @@ const styles = theme => ({
         userSelect: 'none',
     },
     aboutMe: {
-        display: 'flex',
-        justifyContent: 'center',
         borderRadius: 0,
-        maxWidth: '50vw',
         maxHeight: 'calc(100% - 40px)',
         margin: 'auto',
         position: 'relative',
-        padding: 40,
+        padding: 15,
         backgroundColor: '#f2f2f2',
     }
 });
@@ -96,30 +91,28 @@ class Home extends Component {
         const { classes } = this.props;
         const { delayGrow } = this.state;
         return (
-            <div className="home-content">
-                <div id="cover-content">
+            <div className="home-content-mobile">
+                <div id="cover-content-mobile">
                     <Grow in>
                         <Typography
                             variant="h2"
                             className={classes.title}
                         >HI! I'M CLAYTON<span className="punc">.</span></Typography>
                     </Grow>
-                    <a href="#about-me-content">
+                    <a href="#about-me-content-mobile">
                         <ExpandMoreIcon className={"bounce " + classes.expandMoreIcon} />
                     </a>
                     <SectionsBar />
                 </div>
-                <div id="about-me-content" ref={this.props.container}>
+                <div id="about-me-content-mobile" ref={this.props.container}>
                     <Paper className={classes.aboutMe}>
                         <img src={profilePic} className={classes.pic} />
-                        <div className="about-me">
-                            <a className="jump-links">
-                                <Typography variant="h4"
-                                    classes={{ root: classes.aboutMeHeader }}
-                                    id="about-me"
-                                >A Little About Me</Typography>
-                            </a>
-                            <Typography variant="body1" component="p" style={{ marginBottom: 15 }}>
+                        <div className="about-me-mobile">
+                            <Typography variant="h4"
+                                classes={{ root: classes.aboutMeHeader }}
+                                id="about-me"
+                            >A Little About Me</Typography>
+                            <Typography variant="body1" component="p" style={{ margin: 'auto auto 15px auto' }}>
                                 I am a UCLA student pursuing a Bachelors in computer science.
                                 My primary interests are in software engineering 
                                 and mathematical modeling, with machine learning and 
@@ -129,7 +122,6 @@ class Home extends Component {
                         </div>
                     </Paper>
                 </div>
-                <Workplaces />
             </div>  
         );
     }

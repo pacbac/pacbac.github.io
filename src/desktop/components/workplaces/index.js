@@ -5,7 +5,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 
 import Workplace from './Workplace';
-import NAME_LOGO_MAP from './workplaces.json';
+import NAME_LOGO_MAP from '../../../resources/data/workplaces.json';
 import houzzLogo from '../../../resources/images/houzz.png';
 import girsLogo from '../../../resources/images/girs.png';
 import censusLogo from '../../../resources/images/census.png';

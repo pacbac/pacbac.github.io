@@ -10,7 +10,7 @@ import uclaPic from '../../resources/images/uclaeng.png';
 
 const Education = ({ delayGrow, classes }) => (
     <Grow in={delayGrow.edu} key="front">
-        <Card className={classes.card} style={{ margin: 'auto auto 20px auto', padding: '10px 0' }}>
+        <Card className={classes.card} style={{ padding: '10px 0' }}>
             <Typography variant="subtitle1">BS Computer Science - 2021</Typography>
             <CardMedia component="img" src={uclaPic} style={{ margin: 8, width: 'calc(100% - 16px)' }} />
         </Card>

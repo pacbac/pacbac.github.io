@@ -9,12 +9,14 @@
     "classnames": "^2.2.6",
     "lodash.throttle": "^4.1.1",
     "react": "^16.8.6",
+    "react-device-detect": "^1.7.5",
     "react-dom": "^16.8.6",
     "react-scripts": "2.1.1"
   },
   "scripts": {
     "start": "node-sass ./src/App.scss -o ./src/css && react-scripts start",
-    "watch-css": "node-sass ./src/App.scss -wo ./src/css ",
+    "watch-css": "node-sass ./src/desktop/App.scss -wo ./src/desktop/css ",
+    "watch-css-m": "node-sass ./src/mobile/App.scss -wo ./src/mobile/css ",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

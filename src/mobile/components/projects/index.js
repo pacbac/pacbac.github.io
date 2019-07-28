@@ -7,18 +7,18 @@ import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
 import Link from '@material-ui/core/Link';
 
-import PROJECT_MAP from './projects.json';
+import PROJECT_MAP from '../../../resources/data/projects.json';
 // import cgschedulePic from '../resources/images/cgschedule.png';
 
 const styles = theme => ({
     card: {
         borderRadius: 0,
-        width: '25vw',
         padding: 15,
         transition: 'all ease 0.2s',
         '&:hover': {
             transform: 'scale(1.05)',
         },
+        margin: 'auto auto 30px auto',
     },
     pic: {
         marginBottom: 10,
@@ -41,49 +41,30 @@ const ProjectEntry = ({
     link,
     snapshot,
 }) => (
-    <Grid item>
-        <Link href={link} target="_blank" rel="noopener" className={classes.link}>
-            <Card className={classes.card}>
-                <Typography variant="button" component="p" style={{ textAlign: 'left', marginBottom: 10 }}>{period}</Typography>
-                <CardHeader title={title} />
-                <CardContent style={{ padding: 0 }}>
-                    <div className="project-details">
-                        <Typography variant="subtitle2">{technologies.join(' | ')}</Typography>
-                        <div dangerouslySetInnerHTML={{ __html: details }} />
-                    </div>
-                </CardContent>                
-            </Card>
-        </Link>
-    </Grid>
+    <Link href={link} target="_blank" rel="noopener" className={classes.link}>
+        <Card className={classes.card}>
+            <Typography variant="button" component="p" style={{ textAlign: 'left', marginBottom: 10 }}>{period}</Typography>
+            <CardHeader title={title} />
+            <CardContent style={{ padding: 0 }}>
+                <div className="project-details-mobile">
+                    <Typography variant="subtitle2">{technologies.join(' | ')}</Typography>
+                    <div dangerouslySetInnerHTML={{ __html: details }} />
+                </div>
+            </CardContent>                
+        </Card>
+    </Link>
 );
 
 class Projects extends Component {
     render() {
         const { classes } = this.props;
-        const leftColProjects = [];
-        const rightColProjects = [];
-        const projectList = Object.keys(PROJECT_MAP);
-        projectList.forEach((projectName, i) => {
-            if (i > Math.ceil(projectList.length/2) - 1) {
-                rightColProjects.push(PROJECT_MAP[projectName]);
-            } else {
-                leftColProjects.push(PROJECT_MAP[projectName]);
-            }
-        });
         return (
-            <div id="projects-content" ref={this.container}>
+            <div id="projects-content-mobile" ref={this.container}>
                 <Typography
                     variant="h2"
                     className={classes.title}
-                >Personal Projects</Typography>
-                <Grid container spacing={2}>
-                    <Grid item container justify="center" spacing={2}>
-                        {leftColProjects.map(project => <ProjectEntry classes={classes} {...project} />)}
-                    </Grid>
-                    <Grid item container justify="center" spacing={2}>
-                        {rightColProjects.map(project => <ProjectEntry classes={classes} {...project} />)}
-                    </Grid>
-                </Grid>
+                >Projects</Typography>
+                {Object.keys(PROJECT_MAP).map(project => <ProjectEntry classes={classes} {...PROJECT_MAP[project]} />)}
             </div>
         );
     }

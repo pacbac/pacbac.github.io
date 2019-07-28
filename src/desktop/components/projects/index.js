@@ -7,7 +7,7 @@ import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
 import Link from '@material-ui/core/Link';
 
-import PROJECT_MAP from './projects.json';
+import PROJECT_MAP from '../../../resources/data/projects.json';
 // import cgschedulePic from '../resources/images/cgschedule.png';
 
 const styles = theme => ({

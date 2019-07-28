@@ -7,6 +7,7 @@ import throttle from 'lodash.throttle';
 import './css/App.css';
 import HeaderLayer from './components/HeaderLayer';
 import Home from './components/Home';
+import Workplaces from './components/workplaces';
 import Projects from './components/projects';
 import Hobbies from './components/Hobbies';
 
@@ -56,8 +57,9 @@ class App extends Component {
     return (
       <div className="App">
         <HeaderLayer appBarFontColor={appBarFontColor} />
-        <div className="content">
+        <div className="content-mobile">
           <Home container={this.container} />
+          <Workplaces />
           <Projects />
           <Hobbies />
         </div>

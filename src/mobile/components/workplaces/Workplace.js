@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import classNames from 'classnames';
 import Typography from '@material-ui/core/Typography';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
@@ -9,7 +8,6 @@ import IconButton from '@material-ui/core/IconButton';
 
 const Workplace = ({
     classes,
-    isLeft,
     name,
     logo,
     width,
@@ -23,19 +21,15 @@ const Workplace = ({
     return (
         <div style={{ position: 'relative' }}>
         <ExpansionPanel
-                className={classNames(
-                    classes.timelineCard, {
-                        [classes.timelineLeft]: isLeft,
-                        [classes.timelineRight]: !isLeft
-                    }
-                )}
+                className={classes.timelineCard}
                 onChange={() => setExpanded(!expanded)}
                 classes={{ root: classes.expansionPanel }}
             >
                 <ExpansionPanelSummary classes={{ content: classes.expansionPanelSummary }}>
-                    <Typography variant="button" component="p" style={{ textAlign: isLeft ? 'left' : 'right', marginBottom: 10 }}>{location}</Typography>
-                    <div className="workplace">
-                        <img className="workplace-logo" src={logo} width={width} style={{ marginBottom: 5 }} alt={name} />
+                    <Typography variant="button" component="p" style={{ textAlign: 'right', marginBottom: 10 }}>{location}</Typography>
+                    <Typography variant="button" component="p" style={{ textAlign: 'right', marginBottom: 10 }}>{period}</Typography>
+                    <div className="workplace-mobile">
+                        <img className="workplace-logo" src={logo} style={{ marginBottom: 5, width: '75%' }} alt={name} />
                         <Typography variant="subtitle1" component="p" style={{ marginBottom: 5 }}>{position}</Typography>
                         <IconButton style={{ padding: 2 }}>
                             <ExpandMoreIcon className={classes.expandMoreIcon2} style={{ transform: expanded ? 'rotate(180deg)' : '' }} />
@@ -48,15 +42,6 @@ const Workplace = ({
                 </ExpansionPanelDetails>
             </ExpansionPanel>
             <div className={classes.timelineDot} />
-            <Typography
-                variant="button"
-                className={classNames(
-                    classes.timePeriod, {
-                        [classes.timePeriodLeft]: isLeft,
-                        [classes.timePeriodRight]: !isLeft
-                    }
-                )}
-            >{period}</Typography>
         </div>
     );
 }

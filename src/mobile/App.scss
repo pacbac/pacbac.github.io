@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,700');
+
+$APP-BAR-HEIGHT: 70px;
+$sections: 'home', 'cover', 'about-me', 'workplaces', 'projects', 'hobbies';
+$dark-text: rgb(92, 92, 92);
+$lightest-green: #8adbcd;
+$light-green: #65ccbb;
+$very-green: #57ba98;
+$dark-green: #29593b;
+$yellow-paper: #f2ebda;
+$semi-pale-paper: #f5edde;
+$pale-paper: #f7f4ec;
+
+
+@mixin section($color, $min-height: 50vh, $padding: 25px){
+  background: $color;
+  padding: $padding;
+  min-height: $min-height;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.bounce-mobile {
+  animation: {
+    name: bounce;
+    duration: 1s;
+    timing-function: linear;
+    iteration-count: infinite;
+  }
+}
+
+.App-mobile {
+    text-align: center;
+    background: linear-gradient(to bottom right, $lightest-green, $lightest-green 5%, $light-green, $light-green 25%, $very-green 25%, $very-green 85%, $light-green 85%, $light-green, $lightest-green 5%, $lightest-green);
+    min-height: 500px; 
+    transition: all ease 0.1s;
+
+    /* Create the parallax scrolling effect */
+    background: {
+      attachment: fixed;
+      position: center;
+      repeat: no-repeat;
+      size: cover;
+    }
+}
+
+div.sections-bar-mobile {
+  display: flex;
+  position: absolute;
+  overflow: hidden;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-bottom: {
+    style: solid;
+    color: white;
+    width: 3px;
+  }
+
+  > a {
+    text-decoration: none;
+
+    > div.sections-content-mobile {
+      border-top: {
+        style: solid;
+        width: 1px;
+        color: white;
+      }
+      background-color: rgba($dark-green, 0.5);
+      color: white;
+      flex-grow: 1;
+      display: table;
+      padding: 13px;
+      font-family: Poppins;
+      margin-right: 5px;
+      height: 100%;
+      border: {
+        top-left-radius: 3px;
+        top-right-radius: 3px;
+      }
+      transition: background-color ease 0.2s;
+
+      &:hover {
+        background-color: rgba(70, 145, 98, 0.5);
+      }
+    }
+  }
+}
+
+.btn-mobile {
+  color: white;
+  text-decoration: none;
+  display: block;
+  font-family: sans-serif;
+  margin-bottom: 10px;
+  padding: 7px;
+
+  &:hover {
+    background-color: #5688c2;
+  }
+}
+
+.contact-mobile {
+  background-color: gray;
+}
+
+div.content-mobile {
+  width: 100%;
+
+  h1 {
+    margin-top: 0;
+  }
+}
+
+.workplace-mobile {
+  position: 'relative',
+}
+
+a.jump-links-mobile {
+  text-decoration: none;
+  color: black;
+}
+
+.punc-mobile {
+  color: #3b945e;
+}
+
+@each $section in $sections {
+  ##{$section}-content-mobile {
+    color: white;
+    position: relative;
+
+    @if $section == 'about-me' {
+      width: 100%;
+      background: 
+        radial-gradient(ellipse at bottom left, #f7f4ec, #f7f4ec 50%, #f2ebda 50%, #f2ebda 71%, transparent 71%, transparent),
+        linear-gradient(to bottom, transparent, transparent 25%, #f7f4ec 25%, #f7f4ec);
+      padding: 40px;
+      margin-top: 80px;
+      box-sizing: border-box;
+    
+    } @else if $section == 'cover' {
+      height: calc(100vh - #{$APP-BAR-HEIGHT});
+      overflow: auto;
+    
+    } @else if $section == 'workplaces' {
+      $corner-color: lightgray;
+      $main-color: #e2e2e2;
+      $central-color: whitesmoke;
+      
+      background: linear-gradient(120deg, $corner-color, $corner-color 18%, $main-color 18%, $central-color 50%, $main-color 88%, $corner-color 88%, $corner-color);
+      overflow: auto;
+      padding-bottom: 50px;
+
+      .timeline-mobile {
+        position: relative;
+        min-height: 500px;
+        overflow: auto;
+
+        &::before {
+          content: '';
+          height: 100%;
+          width: 4px;
+          left: 10%;
+          position: absolute;
+          background-color: rgba(black, 0.5);
+        }
+      }
+      
+
+    } @else if $section == 'projects' {
+      background:
+        linear-gradient(to bottom left, $yellow-paper, $yellow-paper 22%, transparent 22%, transparent 70%, $yellow-paper 70%, $yellow-paper),
+        linear-gradient(to bottom right, $semi-pale-paper, $semi-pale-paper 10%, $pale-paper 10%, $pale-paper 90%, $semi-pale-paper 90%, $semi-pale-paper);
+      
+      padding: 25px;
+      min-height: 50vh;
+
+      .project-details-mobile {
+        background-color: $pale-paper;
+        padding: 10px;
+      }
+      box-sizing: border-box;
+    } @else if $section == 'hobbies' {
+        $corner-color: #b5dfb5;
+        $main-color: rgb(219, 241, 219);
+
+        @include section(linear-gradient(to bottom right, $main-color, $main-color 10%, $corner-color 10%, $corner-color 30%, $main-color 30%, $main-color 70%, $corner-color 70%, $corner-color, 90%, $main-color 90%, $main-color));
+
+        padding-bottom: 40px;
+        overflow: hidden;
+      }
+  }
+}
+
+.social-media-icon-mobile {
+    &:hover {
+      transform: scale(1.2),;
+      transition: all ease 0.2s;
+  }
+}
+
+footer {
+  background-color: #182628;
+  padding: 20px;
+}

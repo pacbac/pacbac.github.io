@@ -13,9 +13,6 @@ import linkedinBlackIcon from '../../resources/icons/linkedinblack.png';
 import githubBlackIcon from '../../resources/icons/githubblack.png';
 
 const styles = {
-    nameRoot: {
-        color: 'white',
-    },
     buttonRoot: {
         color: 'white',
         position: 'relative',
@@ -44,26 +41,26 @@ const GithubIcon = ({ color }) => (
     </Link>
 );
 
-const HeaderLayer = ({ classes: { nameRoot, buttonRoot, header }, appBarFontColor }) => {
+const HeaderLayer = ({ classes: { buttonRoot, header }, appBarFontColor }) => {
     const buttonStyle = { backgroundColor: 'transparent'};
     return (
         <AppBar position="sticky" className="App-header" color="primary" classes={{ root: header }}>
             <Toolbar>
                 <Grid container
-                    justify="space-between"
+                    justify="flex-end"
                     alignItems="center"
-                    spacing={24}
                 >
-                    <Grid item>
-                        <Typography variant="h5" style={{ color: appBarFontColor }} classes={{ root: nameRoot }}>Clayton Chu</Typography>
-                    </Grid>
                     <Grid item>
                         <IconButton className="App-header__icon" style={buttonStyle} disableRipple>
                             <GithubIcon color={appBarFontColor} />
                         </IconButton>
+                    </Grid>
+                    <Grid item>
                         <IconButton className="App-header__icon" style={buttonStyle} disableRipple>
                             <LinkedInIcon color={appBarFontColor} />
                         </IconButton>
+                    </Grid>
+                    <Grid item>
                         <IconButton classes={{ root: buttonRoot }} style={buttonStyle} disableRipple>
                             <a href="mailto:claytonchu99@gmail.com" style={{ color: appBarFontColor, textDecoration: 'none' }}>
                                 <EmailIcon fontSize="large" />

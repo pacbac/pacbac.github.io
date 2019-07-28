@@ -8,13 +8,13 @@
 html {
   scroll-behavior: smooth; }
 
-.bounce {
+.bounce-mobile {
   animation-name: bounce;
   animation-duration: 1s;
   animation-timing-function: linear;
   animation-iteration-count: infinite; }
 
-.App {
+.App-mobile {
   text-align: center;
   background: linear-gradient(to bottom right, #8adbcd, #8adbcd 5%, #65ccbb, #65ccbb 25%, #57ba98 25%, #57ba98 85%, #65ccbb 85%, #65ccbb, #8adbcd 5%, #8adbcd);
   min-height: 500px;
@@ -25,27 +25,26 @@ html {
   background-repeat: no-repeat;
   background-size: cover; }
 
-div.sections-bar {
+div.sections-bar-mobile {
   display: flex;
   position: absolute;
   overflow: hidden;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  padding: 0 50px;
   border-bottom-style: solid;
   border-bottom-color: white;
   border-bottom-width: 3px; }
-  div.sections-bar > a {
+  div.sections-bar-mobile > a {
     text-decoration: none; }
-    div.sections-bar > a > div.sections-content {
+    div.sections-bar-mobile > a > div.sections-content-mobile {
       border-top-style: solid;
       border-top-width: 1px;
       border-top-color: white;
       background-color: rgba(41, 89, 59, 0.5);
       color: white;
-      max-width: 10vw;
       flex-grow: 1;
+      display: table;
       padding: 13px;
       font-family: Poppins;
       margin-right: 5px;
@@ -53,56 +52,48 @@ div.sections-bar {
       border-top-left-radius: 3px;
       border-top-right-radius: 3px;
       transition: background-color ease 0.2s; }
-      div.sections-bar > a > div.sections-content:hover {
+      div.sections-bar-mobile > a > div.sections-content-mobile:hover {
         background-color: rgba(70, 145, 98, 0.5); }
 
-.about-me {
-  max-width: 400px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-left: 20px; }
-
-.btn {
+.btn-mobile {
   color: white;
   text-decoration: none;
   display: block;
   font-family: sans-serif;
   margin-bottom: 10px;
   padding: 7px; }
-  .btn:hover {
+  .btn-mobile:hover {
     background-color: #5688c2; }
 
-.contact {
+.contact-mobile {
   background-color: gray; }
 
-div.content {
+div.content-mobile {
   width: 100%; }
-  div.content h1 {
+  div.content-mobile h1 {
     margin-top: 0; }
 
-.workplace {
-  margin: auto; }
+.workplace-mobile {
+  position: "relative"; }
 
-a.jump-links {
+a.jump-links-mobile {
   text-decoration: none;
   color: black; }
 
-.punc {
+.punc-mobile {
   color: #3b945e; }
 
-#home-content {
+#home-content-mobile {
   color: white;
   position: relative; }
 
-#cover-content {
+#cover-content-mobile {
   color: white;
   position: relative;
   height: calc(100vh - 70px);
   overflow: auto; }
 
-#about-me-content {
+#about-me-content-mobile {
   color: white;
   position: relative;
   width: 100%;
@@ -111,47 +102,45 @@ a.jump-links {
   margin-top: 80px;
   box-sizing: border-box; }
 
-#workplaces-content {
+#workplaces-content-mobile {
   color: white;
   position: relative;
-  background: linear-gradient(120deg, lightgray, lightgray 18%, transparent 18%, whitesmoke 50%, transparent 88%, lightgray 88%, lightgray);
-  padding: 25px;
-  min-height: 50vh;
-  background-color: #e2e2e2;
+  background: linear-gradient(120deg, lightgray, lightgray 18%, #e2e2e2 18%, whitesmoke 50%, #e2e2e2 88%, lightgray 88%, lightgray);
   overflow: auto;
   padding-bottom: 50px; }
-  #workplaces-content .timeline {
+  #workplaces-content-mobile .timeline-mobile {
     position: relative;
     min-height: 500px;
     overflow: auto; }
-    #workplaces-content .timeline::before {
+    #workplaces-content-mobile .timeline-mobile::before {
       content: '';
       height: 100%;
       width: 4px;
-      left: 50%;
-      transform: translateX(-50%);
+      left: 10%;
       position: absolute;
       background-color: rgba(0, 0, 0, 0.5); }
 
-#projects-content {
+#projects-content-mobile {
   color: white;
   position: relative;
   background: linear-gradient(to bottom left, #f2ebda, #f2ebda 22%, transparent 22%, transparent 70%, #f2ebda 70%, #f2ebda), linear-gradient(to bottom right, #f5edde, #f5edde 10%, #f7f4ec 10%, #f7f4ec 90%, #f5edde 90%, #f5edde);
   padding: 25px;
   min-height: 50vh;
   box-sizing: border-box; }
-  #projects-content .project-details {
+  #projects-content-mobile .project-details-mobile {
     background-color: #f7f4ec;
     padding: 10px; }
 
-#hobbies-content {
+#hobbies-content-mobile {
   color: white;
   position: relative;
+  background: linear-gradient(to bottom right, #dbf1db, #dbf1db 10%, #b5dfb5 10%, #b5dfb5 30%, #dbf1db 30%, #dbf1db 70%, #b5dfb5 70%, #b5dfb5, 90%, #dbf1db 90%, #dbf1db);
+  padding: 25px;
+  min-height: 50vh;
   padding-bottom: 40px;
-  overflow: hidden;
-  background: linear-gradient(to bottom right, #dbf1db, #dbf1db 10%, #b5dfb5 10%, #b5dfb5 30%, #dbf1db 30%, #dbf1db 70%, #b5dfb5 70%, #b5dfb5, 90%, #dbf1db 90%, #dbf1db); }
+  overflow: hidden; }
 
-.social-media-icon:hover {
+.social-media-icon-mobile:hover {
   transform: scale(1.2);
   transition: all ease 0.2s; }
 

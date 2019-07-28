@@ -1,25 +1,25 @@
 import React from 'react';
 
 const SectionsBar = () => (
-    <div className="sections-bar">
-        <a href="#about-me-content">
-            <div className="sections-content">
-                About Me
+    <div className="sections-bar-mobile">
+        <a href="#about-me-content-mobile">
+            <div className="sections-content-mobile">
+                About
             </div>
         </a>
-        <a href="#workplaces-content">
-            <div className="sections-content">
-                Work Experience
+        <a href="#workplaces-content-mobile">
+            <div className="sections-content-mobile">
+                Work
             </div>
         </a>
-        <a href="#projects-content">
-            <div className="sections-content">
-                Personal Projects
+        <a href="#projects-content-mobile">
+            <div className="sections-content-mobile">
+                Projects
             </div>
         </a>
-        <a href="#hobbies-content">
-            <div className="sections-content">
-                Other Interests
+        <a href="#hobbies-content-mobile">
+            <div className="sections-content-mobile">
+                Other
             </div>
         </a>
     </div>
