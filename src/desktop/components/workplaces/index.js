@@ -21,7 +21,7 @@ const styles = theme => ({
     card: {
         position: 'relative',
         borderRadius: 0,
-        maxWidth: `${CARD_WIDTH}vw`,
+        maxWidth: `${CARD_WIDTH}%`,
         overflow: 'visible',
         margin: 'auto',
     },
@@ -56,7 +56,7 @@ const styles = theme => ({
     },
     timelineCard: {
         position: 'relative',
-        maxWidth: `${CARD_WIDTH}vw`,
+        maxWidth: `${CARD_WIDTH}%`,
     },
     timelineLeft: {
         margin: `${CARD_MARGIN_TOP}px auto 50px auto !important`, // override the margins when expansionpanel expanded

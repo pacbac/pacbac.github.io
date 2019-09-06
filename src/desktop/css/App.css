@@ -19,6 +19,7 @@ html {
   background: linear-gradient(to bottom right, #8adbcd, #8adbcd 5%, #65ccbb, #65ccbb 25%, #57ba98 25%, #57ba98 85%, #65ccbb 85%, #65ccbb, #8adbcd 5%, #8adbcd);
   min-height: 500px;
   transition: all ease 0.1s;
+  min-width: 1250px;
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
@@ -27,8 +28,10 @@ html {
 
 div.sections-bar {
   display: flex;
+  justify-content: center;
   position: absolute;
   overflow: hidden;
+  width: 50%;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
@@ -99,7 +102,7 @@ a.jump-links {
 #cover-content {
   color: white;
   position: relative;
-  height: calc(100vh - 70px);
+  height: calc(100% - 70px);
   overflow: auto; }
 
 #about-me-content {
