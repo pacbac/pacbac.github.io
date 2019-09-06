@@ -52,7 +52,7 @@ class Hobbies extends Component {
                     style={{
                         color: 'black',
                         fontWeight: 500,
-                        margin: '6% 0',
+                        margin: '6vw 0',
                         transition: '0.2s',
                     }}
                 >Hobbies</Typography>

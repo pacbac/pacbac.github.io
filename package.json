@@ -14,7 +14,7 @@
     "react-scripts": "2.1.1"
   },
   "scripts": {
-    "start": "node-sass ./src/desktop/App.scss -o ./src/desktop/css && node-sass ./src/mobile/App.scss -o ./src/mobile/css && react-scripts start",
+    "start": "node-sass ./src/App.scss -o ./src/css && react-scripts start",
     "watch-css": "node-sass ./src/desktop/App.scss -wo ./src/desktop/css ",
     "watch-css-m": "node-sass ./src/mobile/App.scss -wo ./src/mobile/css ",
     "build": "react-scripts build",

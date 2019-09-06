@@ -20,7 +20,7 @@ const styles = theme => ({
     },
     expandMoreIcon: {
         color: 'white',
-        margin: '50px 0 120px 0',
+        margin: '50px 0',
         width: 70,
         height: 70,
         transition: 'color ease 0.2s',
@@ -43,7 +43,7 @@ const styles = theme => ({
         display: 'flex',
         justifyContent: 'center',
         borderRadius: 0,
-        maxWidth: '50%',
+        maxWidth: '50vw',
         maxHeight: 'calc(100% - 40px)',
         margin: 'auto',
         position: 'relative',

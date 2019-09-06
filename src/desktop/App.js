@@ -54,7 +54,7 @@ class App extends Component {
     const { appBarFontColor } = this.state;
     const { classes } = this.props;
     return (
-      <div className="App">
+      <div className="App-mobile">
         <HeaderLayer appBarFontColor={appBarFontColor} />
         <div className="content-mobile">
           <Home container={this.container} />
