@@ -45,6 +45,7 @@ html {
     background: linear-gradient(to bottom right, $lightest-green, $lightest-green 5%, $light-green, $light-green 25%, $very-green 25%, $very-green 85%, $light-green 85%, $light-green, $lightest-green 5%, $lightest-green);
     min-height: 500px; 
     transition: all ease 0.1s;
+    min-width: 1250px;
 
     /* Create the parallax scrolling effect */
     background: {
@@ -57,8 +58,10 @@ html {
 
 div.sections-bar {
   display: flex;
+  justify-content: center;
   position: absolute;
   overflow: hidden;
+  width: 50%;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
@@ -161,7 +164,7 @@ a.jump-links {
       box-sizing: border-box;
     
     } @else if $section == 'cover' {
-      height: calc(100vh - #{$APP-BAR-HEIGHT});
+      height: calc(100% - #{$APP-BAR-HEIGHT});
       overflow: auto;
     
     } @else if $section == 'workplaces' {
