@@ -63,8 +63,8 @@ class Hobbies extends Component {
                         <Typography variant="subtitle2">
                             I have been playing piano since the age of 5, focusing mainly on classical pieces.
                             I was classically taught and in early high school finished my piano exams with Trinity Guildhall. Afterward, I decided to continue learning and playing on my own.
-                            Nowadays, I play mostly game and anime piano arrangements, although I'm looking to go back
-                            to playing classical music in the near future.
+                            My repertoire consists of a mix of classical, anime, and game music.
+                            Currently, I'm working on playing (and ideally mastering) a handful of the Chopin and Chopin/Godowsky Etudes.
                         </Typography>
                     </CardContent>
                 </Card>
@@ -89,9 +89,9 @@ class Hobbies extends Component {
                     <CardMedia component="img" src={meleePic} className={classes.pic} />
                     <CardContent>
                         <Typography variant="subtitle2">
-                            I enjoy playing Smash with friends as a way to relax and have fun.
+                            Although I rarely play Smash now, it is one way I can relax and have fun.
                             I've been a huge fan of the game and the Smash series in general since 2014, and
-                            follow the competitive Melee scene actively.
+                            for a long time actively followed the competitive Melee scene.
                         </Typography>
                     </CardContent>
                 </Card>
