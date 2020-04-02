@@ -1,24 +1,33 @@
 {
+    "qualtrics": {
+        "name": "Qualtrics",
+        "position": "Software Engineering Intern",
+        "period": "Summer 2020",
+        "link": "https://www.qualtrics.com",
+        "location": "Downtown Seattle, WA",
+        "technologies": ["TBD"],
+        "details": "Data Analytics Platform and Distributed Systems Team",
+        "width": 250
+    },
+    "girs": {
+        "name": "UCLA Garrick Institute of Risk Sciences",
+        "position": "Software Engineer",
+        "period": "Since Nov 2018",
+        "link": "https://risksciences.ucla.edu",
+        "location": "West Los Angeles, CA",
+        "technologies": ["React", "Node", "Puppeteer", "Docker", "Django", "PostgreSQL", "MongoDB"],
+        "details": "At GIRS, I develop risk engineering tools used by NASA JPL, Japan's Nuclear Regulation Authority, and PG&E. I worked on projects across both backend and frontend, from automated report generators for risk models to platform-wide internationalization to UI components for troubleshooting. Currently, I'm working on quantifying the risk of fires caused by power stations and powerlines due to terrain features and weather conditions.",
+        "width": 350
+    },
     "houzz": {
         "name": "Houzz",
         "position": "Software Engineering Intern",
-        "logo": "../resources/images/houzz.png",
         "period": "Summer 2019",
         "link": "https://houzz.com",
         "location": "Santa Monica, CA",
         "technologies": ["React", "PHP", "SQL", "GraphQL", "Thrift", "Java"],
-        "details": "At Houzz, I worked on the Marketplace Ads Team and Trade Growth team. In my time there, I worked on a project to add new legal consent components for advertisers on the houzz.com website, helped build a platform to appropriately price vendors' products on the website, and implemented site perks to promote the Houzz Trade program for professional users.",
+        "details": "At Houzz, I worked on the Marketplace Ads Team and Trade Growth team. In my time there, I worked on a project to add new legal consent components for advertisers on houzz.com, helped build a platform to appropriately price vendors' products on the website, and implemented site perks to promote the Houzz Trade program for professional users.",
         "width": 150
-    },
-    "girs": {
-        "name": "UCLA Garrick Institute of Risk Sciences",
-        "position": "Student Software Engineer",
-        "period": "Since Nov 2018",
-        "link": "https://risksciences.ucla.edu",
-        "location": "West Los Angeles, CA",
-        "technologies": ["React", "Material-UI", "REST", "Django"],
-        "details": "At GIRS, I develop risk engineering tools used NASA JPL and Japan's Nuclear Regulation Authority. I have helped develop numerous frontend features, from automated academic report summaries of risk models to platform-wide internationalization to UI components for troubleshooting.",
-        "width": 350
     },
     "census": {
         "name": "US Census Bureau",

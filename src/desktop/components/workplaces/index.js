@@ -10,12 +10,13 @@ import houzzLogo from '../../../resources/images/houzz.png';
 import girsLogo from '../../../resources/images/girs.png';
 import censusLogo from '../../../resources/images/census.png';
 import jhuaplLogo from '../../../resources/images/jhuapl.png';
+import qualtricsLogo from '../../../resources/images/qualtrics.png';
 
 const CARD_WIDTH = 30; // vw
 const CARD_MARGIN_TOP = 30; // px
 const ARROW_THICKNESS = 15; // px
 const TIMELINE_EDGE_ICON_DIM = 50; // px
-const logos = [houzzLogo, girsLogo, censusLogo, jhuaplLogo];
+const logos = [qualtricsLogo, girsLogo, houzzLogo, censusLogo, jhuaplLogo];
 
 const styles = theme => ({
     card: {
@@ -133,28 +134,24 @@ const styles = theme => ({
     },
 });
 
-const Workplaces = ({ classes }) => {
-    const rightSide = [], leftSide = [];
-    Object.keys(NAME_LOGO_MAP).forEach((workplace, i) => i % 2 === 0 ? rightSide.push(NAME_LOGO_MAP[workplace]) : leftSide.push(NAME_LOGO_MAP[workplace]));
-    return (
-        <div id="workplaces-content">
-            <Typography variant="h2" className={classes.title}>
-                Where I've Worked
-            </Typography>
-            <ExpandMoreIcon className={classes.nowIcon} />
-            <div className="timeline">
-                {Object.keys(NAME_LOGO_MAP).map((workplaceObj, i) => (
-                    <Workplace 
-                        isLeft={i % 2 === 0}
-                        classes={classes}
-                        {...NAME_LOGO_MAP[workplaceObj]}
-                        logo={logos[i]}
-                    />
-                ))}
-            </div>
-            <MoreHorizIcon className={classes.pastIcon} />
+const Workplaces = ({ classes }) => (
+    <div id="workplaces-content">
+        <Typography variant="h2" className={classes.title}>
+            Where I've Worked
+        </Typography>
+        <ExpandMoreIcon className={classes.nowIcon} />
+        <div className="timeline">
+            {Object.keys(NAME_LOGO_MAP).map((workplaceObj, i) => (
+                <Workplace 
+                    isLeft={!(i % 2)}
+                    classes={classes}
+                    {...NAME_LOGO_MAP[workplaceObj]}
+                    logo={logos[i]}
+                />
+            ))}
         </div>
-    )
-};
+        <MoreHorizIcon className={classes.pastIcon} />
+    </div>
+);
 
 export default withStyles(styles)(Workplaces);
