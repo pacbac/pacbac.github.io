@@ -10,11 +10,12 @@ import houzzLogo from '../../../resources/images/houzz.png';
 import girsLogo from '../../../resources/images/girs.png';
 import censusLogo from '../../../resources/images/census.png';
 import jhuaplLogo from '../../../resources/images/jhuapl.png';
+import qualtricsLogo from '../../../resources/images/qualtrics.png';
 
 const CARD_MARGIN_TOP = 30; // px
 const ARROW_THICKNESS = 15; // px
 const TIMELINE_EDGE_ICON_DIM = 50; // px
-const logos = [houzzLogo, girsLogo, censusLogo, jhuaplLogo];
+const logos = [qualtricsLogo, girsLogo, houzzLogo, censusLogo, jhuaplLogo];
 
 const styles = theme => ({
     expansionPanel: {
