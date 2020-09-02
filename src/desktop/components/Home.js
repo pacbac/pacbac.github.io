@@ -120,10 +120,9 @@ class Home extends Component {
                                 >A Little About Me</Typography>
                             </a>
                             <Typography variant="body1" component="p" style={{ marginBottom: 15 }}>
-                                I am a UCLA student pursuing a Bachelors in computer science.
-                                My primary interests are in software engineering 
-                                and mathematical modeling, with machine learning and 
-                                other applied mathematical topics as secondary interests.
+                            I am a UCLA student pursuing a Bachelors in computer science.
+                            I'm interested are in distributed systems and machine learning,
+                            with mathematical modeling and other applied mathematical topics as secondary interests.
                             </Typography>
                             <Education classes={classes} delayGrow={delayGrow} />
                         </div>

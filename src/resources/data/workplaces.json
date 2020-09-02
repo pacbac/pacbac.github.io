@@ -5,18 +5,18 @@
         "period": "Summer 2020",
         "link": "https://www.qualtrics.com",
         "location": "Remote (orig. Downtown Seattle, WA)",
-        "technologies": ["TBD"],
-        "details": "Data Analytics Platform Team",
+        "technologies": ["Scala", "Elasticsearch", "Nomad", "Jenkins"],
+        "details": "At Qualtrics, I was on Analytics Platform, the primary distributed systems team for efficiently storing and processing all of Qualtric's large datasets. I built an estimator that predicts how long it takes to rebuild a dataset due to schema changes, using historical build data. Because a user's dashboard must temporarily go down during a build, this also helps clients know when their dashboards can become usable again. In addition, I also built separate compactor and deleter jobs to help compact and trim historical data, saving DB space and estimate calculation time by up to 10x.",
         "width": 250
     },
     "girs": {
         "name": "UCLA Garrick Institute of Risk Sciences",
         "position": "Software Engineer",
-        "period": "Since Nov 2018",
+        "period": "Nov 2018 - Aug 2020",
         "link": "https://risksciences.ucla.edu",
         "location": "West Los Angeles, CA",
         "technologies": ["React", "Node", "Puppeteer", "Docker", "Django", "PostgreSQL", "MongoDB"],
-        "details": "At GIRS, I develop risk engineering tools used by NASA JPL, Japan's Nuclear Regulation Authority, and PG&E. I worked on projects across both backend and frontend, from automated report generators for risk models to platform-wide internationalization to UI components for troubleshooting. Currently, I'm working on quantifying the risk of fires caused by power stations and powerlines due to terrain features and weather conditions.",
+        "details": "At GIRS, I developed risk engineering tools used by NASA JPL, Japan's Nuclear Regulation Authority, and PG&E. My most significant project was leading the design and implementation of a backend for assessing the ignition risk of PG&E powerlines based on geographic conditions. Before that, I worked on mostly frontend/fullstack projects, from independently creating and deploying automated report generators for risk models to adding platform-wide internationalization.",
         "width": 350
     },
     "houzz": {

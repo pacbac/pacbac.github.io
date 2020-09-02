@@ -6,19 +6,19 @@
         "link": "https://github.com/pacbac/opioid-trends",
         "period": "Feb 2019"
     },
-    "cgscheduler": {
-        "title": "Cell Group Meeting Scheduler",
-        "details": "This is a small, customized app I made for about ~25 people to easily view and schedule their biweekly meetup group. <br/>I have also built in certain features such as automatically notifying the scheduler of date/role conflicts, autogenerating certain columns, etc. It is still being actively used to this day.",
-        "technologies": ["React", "Redux", "SASS", "Python", "PostgreSQL", "jQuery", "Shell"],
-        "link": "https://github.com/pacbac/cgscheduler",
-        "period": "Jun - Sep 2018"
-    },
     "aocmm2018": {
         "title": "ViralSim",
         "details": "I worked with a team to design and implement graphical models to measure time for news to spread to a percentage of users in a social network. I also performed sensitivity analysis (adjusting parameters and analyzing how the model behaved upon these changes) to verify credibility of each model. <br/>This was one of the models that won 2nd place (Alpha Prize) out of 120+ teams in AoCMM 2018 Math Modeling Competition.",
         "technologies": ["Python", "Jupyter"],
         "link": "https://github.com/pacbac/viral-sim",
         "period": "Sep - Oct 2018"
+    },
+    "cgscheduler": {
+        "title": "Cell Group Meeting Scheduler",
+        "details": "This is a small, customized app I made for about ~25 people to easily view and schedule their biweekly meetup group. <br/>I have also built in certain features such as automatically notifying the scheduler of date/role conflicts, autogenerating certain columns, etc. It is still being actively used to this day.",
+        "technologies": ["React", "Redux", "SASS", "Python", "PostgreSQL", "jQuery", "Shell"],
+        "link": "https://github.com/pacbac/cgscheduler",
+        "period": "Jun - Sep 2018"
     },
     "mcm2018": {
         "title": "Interdisciplinary Analysis of the Energy Profiles of Various States",
