@@ -5,7 +5,7 @@
   "homepage": "https://pacbac.github.io",
   "dependencies": {
     "@material-ui/core": "^4.2.1",
-    "@material-ui/icons": "^4.2.1",
+    "@material-ui/icons": "^4.9.1",
     "classnames": "^2.2.6",
     "lodash.throttle": "^4.1.1",
     "react": "^16.8.6",
@@ -34,6 +34,6 @@
   ],
   "devDependencies": {
     "gh-pages": "^2.0.1",
-    "node-sass": "^4.13.1"
+    "node-sass": "^4.14.1"
   }
 }

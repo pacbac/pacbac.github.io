@@ -1,10 +1,12 @@
 import React from 'react';
+import classNames from 'classnames'
 import { Typography, IconButton } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Grid from '@material-ui/core/Grid';
 import Toolbar from '@material-ui/core/Toolbar';
 import EmailIcon from '@material-ui/icons/Email';
+import YouTubeIcon from '@material-ui/icons/YouTube';
 import Link from '@material-ui/core/Link';
 
 import linkedinWhiteIcon from '../../resources/icons/linkedinwhite.png';
@@ -58,6 +60,11 @@ const HeaderLayer = ({ classes: { nameRoot, buttonRoot, header }, appBarFontColo
                         <Typography variant="h5" style={{ color: appBarFontColor }} classes={{ root: nameRoot }}>Clayton Chu</Typography>
                     </Grid>
                     <Grid item>
+                        <IconButton classes={{ root: buttonRoot }} style={buttonStyle} disableRipple>
+                            <a href="https://www.youtube.com/channel/UCxCW-I6tuiFRa91_19vAnOQ" style={{ color: appBarFontColor, textDecoration: 'none' }} target="_blank" rel="noopener noreferrer">
+                                <YouTubeIcon fontSize="large" />
+                            </a>
+                        </IconButton> 
                         <IconButton className="App-header__icon" style={buttonStyle} disableRipple>
                             <GithubIcon color={appBarFontColor} />
                         </IconButton>

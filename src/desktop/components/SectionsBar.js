@@ -1,27 +1,21 @@
 import React from 'react';
 
+const classNameTitleMap = {
+    'about-me': 'About Me',
+    'workplaces': 'Work Experience',
+    'projects': 'Personal Projects',
+    'hobbies': 'Other Interests'
+}
+
 const SectionsBar = () => (
     <div className="sections-bar">
-        <a href="#about-me-content">
-            <div className="sections-content">
-                About Me
-            </div>
-        </a>
-        <a href="#workplaces-content">
-            <div className="sections-content">
-                Work Experience
-            </div>
-        </a>
-        <a href="#projects-content">
-            <div className="sections-content">
-                Personal Projects
-            </div>
-        </a>
-        <a href="#hobbies-content">
-            <div className="sections-content">
-                Other Interests
-            </div>
-        </a>
+        {Object.entries(classNameTitleMap).map(([className, title]) => (
+            <a href={`#${className}-content`}>
+                <div className="sections-content">
+                    {title}
+                </div>
+            </a>
+        ))}
     </div>
 );
 

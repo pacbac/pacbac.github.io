@@ -9,6 +9,7 @@ import HeaderLayer from './components/HeaderLayer';
 import Home from './components/Home';
 import Projects from './components/projects';
 import Hobbies from './components/Hobbies';
+import Workplaces from './components/workplaces';
 
 const styles = {
   footer: {
@@ -58,6 +59,7 @@ class App extends Component {
         <HeaderLayer appBarFontColor={appBarFontColor} />
         <div className="content-mobile">
           <Home container={this.container} />
+          <Workplaces />
           <Projects />
           <Hobbies />
         </div>

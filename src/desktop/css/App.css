@@ -53,8 +53,8 @@ div.sections-bar {
       font-family: Poppins;
       margin-right: 5px;
       height: 100%;
-      border-top-left-radius: 3px;
-      border-top-right-radius: 3px;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
       transition: background-color ease 0.2s; }
       div.sections-bar > a > div.sections-content:hover {
         background-color: rgba(70, 145, 98, 0.5); }
@@ -65,6 +65,10 @@ div.sections-bar {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-left: 20px;
+  border-left-style: solid;
+  border-left-color: #dbdbdb;
+  border-left-width: 1px;
   margin-left: 20px; }
 
 .btn {
@@ -87,10 +91,6 @@ div.content {
 
 .workplace {
   margin: auto; }
-
-a.jump-links {
-  text-decoration: none;
-  color: black; }
 
 .punc {
   color: #3b945e; }
@@ -144,8 +144,8 @@ a.jump-links {
   min-height: 50vh;
   box-sizing: border-box; }
   #projects-content .project-details {
-    background-color: #f7f4ec;
-    padding: 10px; }
+    background-color: rgba(247, 244, 236, 0.65);
+    padding: 15px; }
 
 #hobbies-content {
   color: white;

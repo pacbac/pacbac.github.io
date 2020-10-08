@@ -6,7 +6,6 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Grow from '@material-ui/core/Grow';
 
 import SectionsBar from './SectionsBar';
-import Workplaces from './workplaces';
 import Education from './Education';
 import profilePic from '../../resources/images/profilepic.jpg';
 
@@ -17,6 +16,7 @@ const styles = theme => ({
     pic: {
         width: 400,
         height: 400,
+        borderRadius: 15,
     },
     expandMoreIcon: {
         color: 'white',
@@ -42,13 +42,12 @@ const styles = theme => ({
     aboutMe: {
         display: 'flex',
         justifyContent: 'center',
-        borderRadius: 0,
+        borderRadius: 15,
         maxWidth: '50%',
         maxHeight: 'calc(100% - 40px)',
         margin: 'auto',
         position: 'relative',
-        padding: 40,
-        backgroundColor: '#f2f2f2',
+        padding: 40
     }
 });
 
@@ -111,24 +110,21 @@ class Home extends Component {
                 </div>
                 <div id="about-me-content" ref={this.props.container}>
                     <Paper className={classes.aboutMe}>
-                        <img src={profilePic} className={classes.pic} />
+                        <img src={profilePic} className={classes.pic} alt="profile" />
                         <div className="about-me">
-                            <a className="jump-links">
-                                <Typography variant="h4"
-                                    classes={{ root: classes.aboutMeHeader }}
-                                    id="about-me"
-                                >A Little About Me</Typography>
-                            </a>
+                            <Typography variant="h4"
+                                classes={{ root: classes.aboutMeHeader }}
+                                id="about-me"
+                            >A Little About Me</Typography>
                             <Typography variant="body1" component="p" style={{ marginBottom: 15 }}>
                             I am a UCLA student pursuing a Bachelors in computer science.
-                            I'm interested are in distributed systems and machine learning,
+                            My primary interests are in distributed systems and machine learning,
                             with mathematical modeling and other applied mathematical topics as secondary interests.
                             </Typography>
                             <Education classes={classes} delayGrow={delayGrow} />
                         </div>
                     </Paper>
                 </div>
-                <Workplaces />
             </div>  
         );
     }

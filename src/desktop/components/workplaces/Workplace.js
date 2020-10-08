@@ -24,10 +24,10 @@ const Workplace = ({
         <div style={{ position: 'relative' }}>
         <ExpansionPanel
                 className={classNames(
-                    classes.timelineCard, {
+                    {
                         [classes.timelineLeft]: isLeft,
                         [classes.timelineRight]: !isLeft
-                    }
+                    }, classes.timelineCard
                 )}
                 onChange={() => setExpanded(!expanded)}
                 classes={{ root: classes.expansionPanel }}

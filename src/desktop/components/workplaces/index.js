@@ -35,13 +35,14 @@ const styles = theme => ({
     expansionPanel: {
         transition: 'all ease 0.1s',
         paddingTop: 16,
+        borderRadius: 15
     },
     expansionPanelSummary: {
         margin: 0,
         display: 'block',
     },
     expansionPanelDetails: {
-        backgroundColor: 'rgba(0,0,0,0.12)',
+        backgroundColor: 'rgba(0,0,0,0.07)',
         display: 'block',
     },
     expandMoreIcon2: {
@@ -58,6 +59,7 @@ const styles = theme => ({
     timelineCard: {
         position: 'relative',
         maxWidth: `${CARD_WIDTH}%`,
+        borderRadius: 10
     },
     timelineLeft: {
         margin: `${CARD_MARGIN_TOP}px auto 50px auto !important`, // override the margins when expansionpanel expanded
